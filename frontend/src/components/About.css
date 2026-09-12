@@ -1,0 +1,83 @@
+/* About Us Section */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 40px;
+  background-color: #ffffff;
+  gap: 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 40px 0 40px 0;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 40px 0 40px 0;
+  box-shadow: 0 4px 16px rgba(7, 46, 96, 0.12);
+}
+
+.about-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-content h4 {
+  font-size: 24px;
+  font-style: italic;
+  color: #12B9BC;
+  margin-bottom: 10px;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #072E60;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 16px;
+  color: #072E60;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.about-content .read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #12B9BC;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 20px 0 20px 0;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.about-content .read-more:hover {
+  background-color: #072E60;
+}
+
+.typing-text::after {
+  content: '|';
+  color: #6FCFD3;
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}

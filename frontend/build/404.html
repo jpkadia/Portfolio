@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Parth Kadiya</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffffff;
+        color: #072E60;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+      }
+      .card {
+        max-width: 540px;
+        padding: 50px 30px;
+        border-radius: 40px 0 40px 0;
+        box-shadow: 0 8px 30px rgba(7, 46, 96, 0.08);
+        border: 1.5px solid rgba(18, 185, 188, 0.2);
+      }
+      .code {
+        font-size: 80px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #072E60, #12B9BC, #6FCFD3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        margin-bottom: 15px;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+      a {
+        display: inline-block;
+        background-color: #12B9BC;
+        color: #ffffff;
+        padding: 12px 28px;
+        border-radius: 20px 0 20px 0;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+      a:hover {
+        background-color: #072E60;
+      }
+    </style>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // If path contains an SPA route, redirect smoothly to portfolio root with query
+      (function() {
+        var segmentCount = 1;
+        var l = window.location;
+        if (l.pathname.split('/').length > 2) {
+          l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?/' +
+            l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+            l.hash
+          );
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="code">404</div>
+      <h1>Page Not Found</h1>
+      <p>Oops! The page you are looking for might have been removed or does not exist.</p>
+      <a href="https://parth-kadiya.github.io/portfolio/">Back to Home</a>
+    </div>
+  </body>
+</html>

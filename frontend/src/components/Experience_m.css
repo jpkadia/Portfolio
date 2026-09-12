@@ -1,0 +1,62 @@
+/* Responsive: Mobile (≤768px) */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 40px 16px;
+  }
+
+  .experience-subtitle {
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .experience-title {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+
+  .experience-timeline {
+    padding-left: 15px;
+    border-left: 2px solid #12B9BC;
+    max-width: 100%;
+  }
+
+  .timeline-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+  }
+
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    left: -10px;
+    top: 10px;
+    box-shadow: 0 0 0 3px rgba(18, 185, 188, 0.2);
+  }
+
+  .timeline-card {
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .timeline-card h3 {
+    font-size: 16px;
+  }
+
+  .timeline-card h3 span {
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .timeline-duration {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

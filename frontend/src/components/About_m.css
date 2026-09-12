@@ -1,0 +1,32 @@
+/* Responsive: Mobile (≤768px) */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;      /* Column layout */
+    padding: 30px 20px;          /* Thoda compact padding */
+    gap: 30px;                   /* image aur content ke beech gap kam */
+    text-align: center;          /* Mobile ke liye center alignment */
+  }
+
+  .about-image {
+    max-width: 90%;              /* Thoda chhota for screen */
+    margin: 0 auto;              /* Center align image */
+  }
+
+  .about-content {
+    max-width: 100%;
+    text-align: center;          /* Paragraph center on mobile */
+  }
+
+  .about-content p {
+    text-align: justify;         /* Maintain justify if preferred */
+    font-size: 15px;             /* Slightly smaller font */
+  }
+
+  .about-content h4 {
+    font-size: 20px;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+}

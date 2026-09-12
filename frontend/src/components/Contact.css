@@ -1,0 +1,137 @@
+/* Contact Form */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.contact-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-container h4 {
+    font-size: 18px;
+    font-style: italic;
+    color: #12B9BC;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  font-size: 24px;
+  font-style: italic;
+  color: #12B9BC;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.contact-subtitle::after {
+  content: '|';
+  color: #6FCFD3;
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.contact-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #072E60;
+  font-family: 'Poppins', sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #888;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="text"],
+input[type="tel"],
+textarea,
+button.send-button {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 20px 0 20px 0;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+}
+
+textarea {
+    height: 120px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #12B9BC;
+    box-shadow: 0 0 0 3px rgba(18, 185, 188, 0.15);
+}
+
+.contact-status-message {
+  padding: 14px 18px;
+  border-radius: 16px 0 16px 0;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-status-message.status-success {
+  background-color: rgba(18, 185, 188, 0.12);
+  border: 1.5px solid #12B9BC;
+  color: #072E60;
+}
+
+.contact-status-message.status-error {
+  background-color: rgba(7, 46, 96, 0.08);
+  border: 1.5px solid #072E60;
+  color: #072E60;
+}
+
+button.send-button {
+    background-color: #12B9BC;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.send-button:hover:not(:disabled) {
+    background-color: #072E60;
+    box-shadow: 0 6px 16px rgba(7, 46, 96, 0.25);
+}
+
+button.send-button:disabled {
+    background-color: #6FCFD3;
+    color: #FFFFFF;
+    cursor: not-allowed;
+    opacity: 0.8;
+}

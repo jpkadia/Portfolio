@@ -1,0 +1,38 @@
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .footer-column {
+    min-width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .footer-column p {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .footer-link i {
+    margin-right: 6px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 20px;
+    padding-top: 12px;
+  }
+}

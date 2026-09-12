@@ -1,0 +1,320 @@
+:root {
+  --accent1: #12B9BC;
+  --accent2: #6FCFD3;
+  --accent3: #072E60;
+  --bg-section: #ffffff;
+}
+
+/* Projects Section */
+.projects-section {
+  background-color: var(--bg-section);
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: visible;
+}
+
+/* subtitle / typing text */
+.projects-subtitle {
+  font-size: 24px;
+  font-style: italic;
+  color: #12B9BC;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  display: inline-block;
+  white-space: nowrap;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+/* caret */
+.projects-subtitle::after {
+  content: '|';
+  color: #6FCFD3;
+  animation: blink 1s infinite;
+  margin-left: 6px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.subtitle-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.projects-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #072E60;
+}
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Card */
+.project-card {
+  background-color: #fff;
+  border-radius: 40px 0px 40px 0px;
+  box-shadow: 0 6px 20px rgba(7, 46, 96, 0.08);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+  min-height: 220px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(7, 46, 96, 0.15);
+}
+
+/* -----------------------
+   Icon (rotating gradient)
+   replicated from Skills.css
+   -----------------------*/
+.project-icon {
+  width: 140px;
+  height: 140px;
+  margin: 8px auto 12px auto;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(
+    from 0deg,
+    var(--accent1),
+    var(--accent2),
+    var(--accent3),
+    var(--accent1)
+  );
+  animation: rotate-border 3s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  box-sizing: border-box;
+}
+
+/* inner circle that holds the image - clipped so image fully fills circle */
+.project-icon-inner {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate-inner 3s linear infinite;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* image inside icon - fill the circular inner area completely */
+.project-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+/* keyframes for rotating border + inner counter-rotate */
+@keyframes rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes rotate-inner {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+/* subtle glow on hover similar to Skills */
+.project-card:hover .project-icon {
+  box-shadow: 0 0 0 6px rgba(18, 185, 188, 0.25);
+}
+
+/* Content */
+.project-content {
+  padding: 6px 6px 0 6px;
+  text-align: left;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #072E60;
+  text-align: left;
+}
+
+.project-content p {
+  font-size: 14px;
+  color: #072E60;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  flex: 1 1 auto;
+}
+
+/* Links row */
+.project-links {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Base link/button styles */
+.project-links a {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 20px 0 20px 0;
+  transition: color 0.28s ease, border-color 0.28s ease, box-shadow 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.project-links a > span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  line-height: 1;
+}
+
+.project-links a::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 20px 0 20px 0;
+  transform: translateX(-105%);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(.2,.9,.3,1), opacity 0.25s ease;
+  z-index: 1;
+  pointer-events: none;
+  box-sizing: border-box;
+  will-change: transform, opacity;
+}
+
+.project-links a:hover::before,
+.project-links a:focus-visible::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* GitHub Button styles */
+.github-btn {
+  color: var(--accent1);
+  border: 2px solid var(--accent1);
+  background-color: #fff;
+  box-shadow: none;
+}
+
+/* GitHub overlay gradient (slides on hover) */
+.github-btn::before {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+}
+
+.project-links a.github-btn:hover,
+.project-links a.github-btn:focus-visible {
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 8px rgba(18, 185, 188, 0.3);
+}
+
+/* Live Demo Button styles */
+.live-btn {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent1));
+  background-origin: border-box;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  color: #fff;
+  border: 2px solid transparent;
+  box-shadow: 0 0 8px rgba(18, 185, 188, 0.3);
+}
+
+/* Live overlay (slides white over the gradient to invert) */
+.live-btn::before {
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  opacity: 1;
+}
+
+.project-links a.live-btn:hover,
+.project-links a.live-btn:focus-visible {
+  color: var(--accent1);
+  border-color: var(--accent1);
+  box-shadow: none;
+}
+
+.project-links a:focus-visible {
+  outline: 3px solid rgba(18, 185, 188, 0.2);
+  outline-offset: 2px;
+}
+
+.project-links a:active::before,
+.project-links a:focus::before {
+  transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects-grid {
+    gap: 22px;
+  }
+  .project-card {
+    min-height: 240px;
+  }
+  .projects-subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-subtitle {
+    font-size: 18px;
+  }
+
+  .project-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .project-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

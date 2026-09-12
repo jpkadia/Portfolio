@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host
+Host: https://parth-kadiya.github.io
+
+# Sitemap
+Sitemap: https://parth-kadiya.github.io/portfolio/sitemap.xml

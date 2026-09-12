@@ -1,0 +1,54 @@
+/* Responsive: Mobile (≤768px) */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 40px 16px;
+  }
+
+  .skills-subtitle {
+    font-size: 16px;
+  }
+
+  .skills-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .skills-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .skill-card {
+    width: 100%;
+    max-width: 330px;
+    padding: 25px 20px;
+    text-align: left;
+  }
+
+  .skill-icon {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 16px;
+  }
+
+  .skill-icon img {
+    width: 80px;
+  }
+
+  .skill-card h3 {
+    font-size: 17px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .skill-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .typing-text {
+    font-size: 20px;
+    text-align: center;
+  }
+}
