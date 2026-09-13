@@ -197,7 +197,6 @@ export default function Projects() {
                       ? project.image
                       : `${process.env.PUBLIC_URL}/assets/${project.image}`;
 
-                  const isSvg = project.image.endsWith(".svg");
                   const webpImages = ["doctor_one.png", "lathrix.png", "patient_testimonials.png"];
                   const hasWebP = webpImages.includes(project.image);
 
