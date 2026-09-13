@@ -267,12 +267,13 @@ body.dark-theme .category-tab-btn {
   background-color: #092144;
   color: #e2e8f0;
   border-color: #12B9BC;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: none !important;
 }
 
 body.dark-theme .category-tab-btn:hover {
   background-color: rgba(18, 185, 188, 0.2);
   color: #6FCFD3;
+  box-shadow: none !important;
 }
 
 body.dark-theme .category-tab-btn.active,
@@ -285,7 +286,7 @@ body.dark-theme .category-tab-btn.active:hover {
   border-color: transparent !important;
   color: #ffffff !important;
   outline: none !important;
-  box-shadow: 0 6px 18px rgba(18, 185, 188, 0.35) !important;
+  box-shadow: none !important;
 }
 
 body.dark-theme .category-tab-badge {

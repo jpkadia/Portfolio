@@ -47,9 +47,9 @@
 }
 
 .theme-toggle-icon-sun {
-  color: #FFAA00;
+  color: #ffffff;
   font-size: 15px;
-  filter: drop-shadow(0 0 4px rgba(255, 170, 0, 0.5));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 
 .theme-toggle-icon-moon {
@@ -84,6 +84,10 @@ body.dark-theme .theme-toggle-btn:hover {
 
 body.dark-theme .theme-toggle-icon-moon {
   color: #6FCFD3;
+}
+
+body.dark-theme .theme-toggle-icon-sun {
+  color: #ffffff;
 }
 
 /* Tablet & Mobile responsive positioning */

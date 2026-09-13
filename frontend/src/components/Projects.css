@@ -84,14 +84,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 2px 8px rgba(7, 46, 96, 0.05);
+  box-shadow: none;
 }
 
 .category-tab-btn:hover {
   background-color: rgba(18, 185, 188, 0.08);
   color: #12B9BC;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(18, 185, 188, 0.15);
+  box-shadow: none;
 }
 
 .category-tab-btn.active {
@@ -101,7 +101,7 @@
   background-repeat: no-repeat;
   border: 2px solid transparent;
   color: #ffffff;
-  box-shadow: 0 6px 18px rgba(18, 185, 188, 0.35);
+  box-shadow: none;
   transform: translateY(-2px);
 }
 
@@ -112,7 +112,7 @@
   background-repeat: no-repeat;
   border: 2px solid transparent;
   color: #ffffff;
-  box-shadow: 0 8px 22px rgba(18, 185, 188, 0.45);
+  box-shadow: none;
 }
 
 .category-tab-badge {

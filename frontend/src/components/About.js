@@ -50,16 +50,14 @@ export default function AboutMe() {
       ref={ref} // 🆕 Attach observer reference
     >
       <div className="about-image">
-        <picture style={{ display: 'contents' }}>
-          <img
-            src={imgSrc}
-            alt="Parth Kadiya - Frontend Developer and Web Developer"
-            width="2390"
-            height="2390"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
+        <img
+          src={imgSrc}
+          alt="Parth Kadiya - Frontend Developer and Web Developer"
+          width="400"
+          height="400"
+          loading="eager"
+          decoding="async"
+        />
       </div>
       <div className="about-content">
         <h4 className="typing-text" aria-label="ABOUT ME">{text}</h4>

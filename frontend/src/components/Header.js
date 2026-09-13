@@ -221,7 +221,7 @@ export default function Header() {
                     <i className="fa-solid fa-graduation-cap" />
                   )}
                   {link.label === 'Contact' && (
-                    <i className="fa-solid fa-envelope" />
+                    <i className="fa-solid fa-phone" />
                   )}
                   &nbsp;{link.label}
                 </span>
@@ -300,7 +300,7 @@ export default function Header() {
             Home:      'fa-house',
             About:     'fa-user',
             Education: 'fa-graduation-cap',
-            Contact:   'fa-envelope',
+            Contact:   'fa-phone',
           };
           return (
             <HashLink
