@@ -62,7 +62,7 @@ export default function AboutMe() {
       <div className="about-content">
         <h4 className="typing-text" aria-label="ABOUT ME">{text}</h4>
         <p>
-          I'm Parth Kadiya, a passionate Frontend Developer and Web Developer based in Ahmedabad. I specialize in building responsive, scalable, and high-performance web applications using modern technologies like React.js, Next.js, JavaScript, Tailwind CSS, Bootstrap, HTML5, and CSS3.
+          I'm Parth Kadiya, a passionate Web Developer based in Ahmedabad. I specialize in building responsive, scalable, and high-performance web applications using modern technologies like React.js, Next.js, JavaScript, Tailwind CSS, Bootstrap, HTML5, and CSS3.
           My focus is on writing clean, modular code, building seamless interactive components, and integrating robust backend services and REST APIs to deliver exceptional digital experiences across all devices.
         </p>
       </div>
