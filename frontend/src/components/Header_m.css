@@ -77,7 +77,7 @@
   .bottom-nav .nav-item.active {
     color: #12B9BC !important;
   }
- .bottom-nav .nav-item.active i {
+  .bottom-nav .nav-item.active > i {
     background-color: #12B9BC !important;
     color: #ffffff !important;
   }
@@ -132,28 +132,40 @@
   .bottom-nav .nav-item.dropdown .dropdown-menu a.active {
     background-color: rgba(18, 185, 188, 0.1) !important;
     color: #12B9BC !important;
-  }
-  /* Ensure non-active dropdown items don't inherit active color */
+  /* Ensure non-active dropdown items don't inherit active color or background */
+  .bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active),
   .bottom-nav .nav-item.dropdown.active .dropdown-menu a:not(.active),
   .bottom-nav .nav-item.dropdown.open:not(.active) .dropdown-menu a:not(.active) {
     color: #072E60 !important;
+    background: transparent !important;
+    background-color: transparent !important;
   }
+  .bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active) i,
   .bottom-nav .nav-item.dropdown.active .dropdown-menu a:not(.active) i {
     color: #072E60 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-right: 8px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
-    /* 6. Remove Technical’s dropdown arrow + menu on mobile */
-  .bottom-nav .nav-item.dropdown .dropdown-arrow,
-  .bottom-nav .nav-item.dropdown .dropdown-menu {
+    /* 6. Remove Technical’s dropdown arrow on mobile */
+  .bottom-nav .nav-item.dropdown .dropdown-arrow {
     display: none !important;
   }
 }
 
-.bottom-nav .nav-item.dropdown .dropdown-menu a i {
+.bottom-nav .nav-item.dropdown .dropdown-menu a i,
+.bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active) i {
     background: transparent !important;
-    padding: 5px 20px!important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-right: 8px !important;
     border-radius: 0 !important;
     color: #072E60 !important;
+    box-shadow: none !important;
 }
 
 .bottom-nav .nav-item.dropdown .dropdown-menu a.active i {
@@ -161,4 +173,5 @@
     color: #ffffff !important;
     padding: 8px 18px !important;
     border-radius: 16px !important;
+    margin-right: 8px !important;
 }

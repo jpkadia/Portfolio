@@ -110,9 +110,15 @@ body.dark-theme .bottom-nav .nav-item.active {
   color: #12B9BC !important;
 }
 
-body.dark-theme .bottom-nav .nav-item.active i {
+body.dark-theme .bottom-nav .nav-item.active > i {
   background-color: #12B9BC !important;
   color: #ffffff !important;
+}
+
+body.dark-theme .bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active) i {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #e2e8f0 !important;
 }
 
 body.dark-theme .bottom-nav .nav-item.active span {
