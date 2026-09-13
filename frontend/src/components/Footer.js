@@ -89,7 +89,7 @@ export default function Footer() {
         <div className="footer-column">
           <h3>Parth Kadiya</h3>
           <p>
-            Creative Frontend Developer based in Ahmedabad, passionate about crafting responsive, scalable, and high-performance web applications using React, Next.js, and modern web technologies.
+            Creative Web Developer based in Ahmedabad, passionate about crafting responsive, scalable, and high-performance web applications using React, Next.js, and modern web technologies.
           </p>
         </div>
       </div>

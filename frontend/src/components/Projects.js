@@ -62,7 +62,7 @@ export default function Projects() {
       demo: "https://diwali-video-maker.vercel.app",
     },
     {
-      title: "SocialZone",
+      title: "Social Zone",
       category: "Full-Stack Web Application",
       categoryBadge: "Full-Stack Web App",
       description:

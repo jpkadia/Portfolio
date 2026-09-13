@@ -55,7 +55,7 @@ export default function Parth() {
       <div className="parth-content">
         <h1 className="parth-typing" aria-label="Parth Kadiya">{text || '\u00A0'}</h1>
         <p>
-          A passionate IT student blending design thinking with clean code.
+          A passionate Web Developer blending creative design with clean code.
         </p>
       </div>
     </section>
