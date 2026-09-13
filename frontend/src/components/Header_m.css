@@ -132,6 +132,7 @@
   .bottom-nav .nav-item.dropdown .dropdown-menu a.active {
     background-color: rgba(18, 185, 188, 0.1) !important;
     color: #12B9BC !important;
+  }
   /* Ensure non-active dropdown items don't inherit active color or background */
   .bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active),
   .bottom-nav .nav-item.dropdown.active .dropdown-menu a:not(.active),
