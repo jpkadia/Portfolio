@@ -3,7 +3,7 @@ import './Experience.css';
 import './Experience_m.css';
 
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import '../styles/ScrollAnimation.css'; // Make sure this path is correct
+import '../styles/ScrollAnimation.css';
 
 export default function Experience() {
   const [text, setText] = useState('');
@@ -25,7 +25,7 @@ export default function Experience() {
           setTimeout(() => {
             setText('');
             index = 0;
-            type(); // loop again
+            type();
           }, 2000);
         }
       }, 150);
@@ -37,35 +37,22 @@ export default function Experience() {
 
   const experiences = [
     {
-      role: 'Frontend Developer Intern',
-      company: 'SwarnimTouch Solutions Pvt Ltd.',
-      duration: 'Sep 2024 – Present',
+      role: 'Web Developer',
+      company: 'SwarnimTouch Solutions',
+      duration: 'September 2024 to Present',
       description:
-        'Developed and maintained responsive web pages using React.js and Bootstrap to improve user engagement. Optimized website performance through code refactoring, image compression, and lazy loading techniques.'
-    },
-    {
-      role: 'Graphic Design Intern',
-      company: 'Skill Enhanced Pvt Ltd',
-      duration: 'Jun 2024 – Aug 2024',
-      description:
-        'Created interactive prototypes and streamlined onboarding flows in Figma, reducing drop-off rates by 15%. Conducted usability tests, collected feedback, and iterated on designs to enhance user satisfaction.'
-    },
-    {
-      role: 'UI – UX Design Intern',
-      company: 'To-Let Globe Pvt Ltd.',
-      duration: 'Apr 2024 – May 2024',
-      description:
-        'Designed marketing collateral such as logos, banners, and social media graphics to boost brand visibility. Collaborated with marketing teams to produce print and digital advertisements under tight deadlines.'
+        'Developing and maintaining responsive, high-performance web applications using React.js, JavaScript, HTML5, CSS3, Tailwind CSS, and Bootstrap. Implementing modern frontend architectures, RESTful API integrations, cross-browser compatibility, and code optimization to deliver scalable and user-centric digital web solutions.'
     }
   ];
 
   return (
     <section
-  className={`experience-section scroll-animate ${isVisible ? 'visible' : ''}`}
-  id="experience"
-  ref={ref}
->
-      <p className="experience-subtitle typing-text">{text}</p>
+      className={`experience-section scroll-animate ${isVisible ? 'visible' : ''}`}
+      id="experience"
+      ref={ref}
+      aria-label="Professional Experience Section"
+    >
+      <p className="experience-subtitle typing-text" aria-label="EXPERIENCE">{text}</p>
       <h2 className="experience-title">My Journey Through Learning & Contribution</h2>
       <div className="experience-timeline">
         {experiences.map((exp, index) => (

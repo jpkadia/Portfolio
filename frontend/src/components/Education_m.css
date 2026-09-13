@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .education-section {
     padding: 40px 16px;
   }
@@ -19,6 +19,9 @@
   .education-container {
     align-items: center;
     padding: 0 10px;
+    max-width: 750px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .timeline {

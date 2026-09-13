@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="diwaliBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#072E60"/>
+      <stop offset="100%" stop-color="#0a3c7a"/>
+    </linearGradient>
+    <linearGradient id="tealCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12B9BC"/>
+      <stop offset="100%" stop-color="#6FCFD3"/>
+    </linearGradient>
+    <linearGradient id="warmGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9E00"/>
+      <stop offset="100%" stop-color="#FFD166"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#diwaliBg)"/>
+
+  <!-- Subtle Inner Tech & Festive Rings -->
+  <circle cx="256" cy="256" r="236" fill="none" stroke="#12B9BC" stroke-width="2.5" stroke-dasharray="8 8" opacity="0.4"/>
+  <circle cx="256" cy="256" r="216" fill="none" stroke="#6FCFD3" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Film Strip / Multimedia Spools Top Frame -->
+  <g opacity="0.75">
+    <circle cx="206" cy="120" r="28" fill="none" stroke="#12B9BC" stroke-width="4" stroke-dasharray="8 6"/>
+    <circle cx="206" cy="120" r="10" fill="#6FCFD3"/>
+    <circle cx="306" cy="120" r="28" fill="none" stroke="#12B9BC" stroke-width="4" stroke-dasharray="8 6"/>
+    <circle cx="306" cy="120" r="10" fill="#6FCFD3"/>
+    <line x1="206" y1="148" x2="306" y2="148" stroke="#12B9BC" stroke-width="4"/>
+  </g>
+
+  <!-- Main Video Camera Housing with Rounded Corners -->
+  <g filter="url(#softGlow)">
+    <!-- Video Body -->
+    <rect x="146" y="148" width="160" height="110" rx="18" fill="url(#tealCyan)"/>
+    <!-- Video Camera Lens Cone -->
+    <path d="M306 178 L376 142 V264 L306 228 Z" fill="url(#tealCyan)"/>
+  </g>
+
+  <!-- Play Symbol inside Video Camera -->
+  <path d="M210 182 L248 203 L210 224 Z" fill="#ffffff" filter="url(#softGlow)"/>
+
+  <!-- Festive Diya Bowl Base (Integrated Celebratory Base) -->
+  <g filter="url(#softGlow)">
+    <path d="M150 285 Q256 385 362 285 Q256 315 150 285 Z" fill="url(#tealCyan)"/>
+    <!-- Diya Pattern Details -->
+    <path d="M190 295 Q256 345 322 295" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.8"/>
+    <circle cx="256" cy="320" r="4" fill="#ffffff"/>
+    <circle cx="226" cy="310" r="3" fill="#6FCFD3"/>
+    <circle cx="286" cy="310" r="3" fill="#6FCFD3"/>
+  </g>
+
+  <!-- Glowing Festive Diya Flame -->
+  <g filter="url(#softGlow)">
+    <!-- Outer Glow Flame -->
+    <path d="M256 215 C230 250 240 285 256 285 C272 285 282 250 256 215 Z" fill="url(#warmGold)"/>
+    <!-- Inner Radiant Core -->
+    <path d="M256 240 C244 260 248 280 256 280 C264 280 268 260 256 240 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- Celebration Light Sparks & AI Stars -->
+  <path d="M110 170 Q110 185 125 185 Q110 185 110 200 Q110 185 95 185 Q110 185 110 170 Z" fill="#6FCFD3"/>
+  <path d="M400 160 Q400 175 415 175 Q400 175 400 190 Q400 175 385 175 Q400 175 400 160 Z" fill="#12B9BC"/>
+  <path d="M390 270 Q390 282 402 282 Q390 282 390 294 Q390 282 378 282 Q390 282 390 270 Z" fill="#6FCFD3" opacity="0.85"/>
+  <path d="M120 280 Q120 292 132 292 Q120 292 120 304 Q120 292 108 292 Q120 292 120 280 Z" fill="#FFD166" opacity="0.9"/>
+  <circle cx="150" cy="110" r="3" fill="#ffffff" opacity="0.8"/>
+  <circle cx="360" cy="105" r="3" fill="#ffffff" opacity="0.8"/>
+  <circle cx="256" cy="85" r="4" fill="#6FCFD3"/>
+
+  <!-- Bottom Brand Text Badge -->
+  <g transform="translate(146, 405)">
+    <rect x="0" y="0" width="220" height="38" rx="19" fill="url(#tealCyan)"/>
+    <text x="110" y="26" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#072E60" text-anchor="middle" letter-spacing="2">DIWALI VIDEO</text>
+  </g>
+</svg>

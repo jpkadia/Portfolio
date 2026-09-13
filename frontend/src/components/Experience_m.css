@@ -1,5 +1,5 @@
-/* Responsive: Mobile (≤768px) */
-@media (max-width: 768px) {
+/* Responsive: Mobile & Tablet (≤1024px) */
+@media (max-width: 1024px) {
   .experience-section {
     padding: 40px 16px;
   }
@@ -19,7 +19,7 @@
   .experience-timeline {
     padding-left: 15px;
     border-left: 2px solid #12B9BC;
-    max-width: 100%;
+    max-width: 750px;
   }
 
   .timeline-item {

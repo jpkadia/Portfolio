@@ -2,16 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Parth.css';
 import './Parth_m.css';
 
-// src/components/Parth.js
-import useScrollAnimation from '../hooks/useScrollAnimation';
-import '../styles/ScrollAnimation.css';
 
 
 export default function Parth() {
   const [text, setText] = useState('');
   const fullText = 'Parth Kadiya';
-
-  const [ref, isVisible] = useScrollAnimation();
 
   useEffect(() => {
   let index = 0;
@@ -44,16 +39,12 @@ export default function Parth() {
   const imgSrc = encodeURI(rawPath);
 
   return (
-    <section
-      className={`parth scroll-animate ${isVisible ? 'visible' : ''}`}
-      id="parth"
-      ref={ref}
-    >
+    <section className="parth" id="parth">
       <picture style={{ display: 'contents' }}>
         <source srcSet={`${process.env.PUBLIC_URL}/assets/parth.webp`} type="image/webp" />
         <img
           src={imgSrc}
-          alt="Parth Kadiya - Full Stack & Frontend Developer"
+          alt="Parth Kadiya - Frontend Developer &amp; Web Developer Portfolio"
           className="parth-image"
           width="8166"
           height="6044"

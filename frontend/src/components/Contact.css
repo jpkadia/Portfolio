@@ -135,3 +135,41 @@ button.send-button:disabled {
     cursor: not-allowed;
     opacity: 0.8;
 }
+
+/* JavaScript Form Validation Styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+input.input-error,
+textarea.input-error {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15) !important;
+}
+
+.field-error-text {
+    color: #d93025;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 6px;
+    padding-left: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: fieldErrorFadeIn 0.2s ease-in-out;
+}
+
+@keyframes fieldErrorFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -48,168 +48,102 @@ export default function Projects() {
     };
   }, [isVisible, fullText]);
 
-  const projects = [
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const allProjects = [
+    // 1. Full-Stack Web Application
+    {
+      title: "Diwali Video Maker",
+      category: "Full-Stack Web Application",
+      categoryBadge: "Full-Stack Web App",
+      description:
+        "Interactive multimedia web application with custom photo cropping, dynamic video rendering, and celebratory greeting generation.",
+      image: "diwali_video_maker.svg",
+      demo: "https://diwali-video-maker.vercel.app",
+    },
+    {
+      title: "SocialZone",
+      category: "Full-Stack Web Application",
+      categoryBadge: "Full-Stack Web App",
+      description:
+        "Feature-rich social media platform with interactive posts, real-time social feed, user connections, and responsive interface.",
+      image: "socialzone.svg",
+      demo: "https://socialzone.vercel.app",
+    },
+    {
+      title: "Doctor Gen AI",
+      category: "Full-Stack Web Application",
+      categoryBadge: "Full-Stack AI Portal",
+      description:
+        "AI-powered healthcare portal featuring intelligent medical assistance, patient appointments, and automated report analysis with Express/Render backend.",
+      image: "doctor_gen_ai.svg",
+      demo: "https://doctor-gen-ai.vercel.app",
+    },
+
+    // 2. Cross-Platform Application
+    {
+      title: "Bondera",
+      category: "Cross-Platform Application",
+      categoryBadge: "Cross-Platform App",
+      description:
+        "Modern cross-platform mobile and web application built with Expo and React Native, featuring AI-assisted connectivity and smart messaging.",
+      image: "bondera-icon.png",
+      demo: "https://bondera.vercel.app",
+    },
+
+    // 3. Frontend Project
     {
       title: "Product Website",
+      category: "Frontend Project",
+      categoryBadge: "Frontend Project",
       description:
-        "A modern project showcasing responsive UI and interactive components built with HTML, CSS, and JavaScript.",
+        "A modern product showcase website featuring interactive UI and responsive design for LàThrix hair care products.",
       image: "lathrix.png",
-      github: "https://github.com/parth-kadiya/lathrix",
       demo: "https://parth-kadiya.github.io/lathrix",
     },
     {
-      title: "Personal Website",
-      description:
-        "Portfolio and spiritual guru profile with appointment booking and services.",
-      image: "karnav_shashtri.png",
-      github: "https://github.com/parth-kadiya/dr-karnav-shashtri",
-      demo: "https://parth-kadiya.github.io/dr-karnav-shashtri",
-    },
-    
-    {
       title: "Patient Testimonials",
+      category: "Frontend Project",
+      categoryBadge: "Frontend Project",
       description:
-        "A testimonials showcase webpage with animations and modern styling.",
+        "A testimonials showcase webpage with animations, patient reviews, and modern responsive styling.",
       image: "patient_testimonials.png",
-      github: "https://github.com/parth-kadiya/patient-testimonials",
       demo: "https://parth-kadiya.github.io/patient-testimonials",
     },
     {
-      title: "Patient Testimonials Two",
-      description:
-        "Enhanced testimonials section with improved animations and layout.",
-      image: "patient_testimonials_two.png",
-      github: "https://github.com/parth-kadiya/patient-testimonials-two",
-      demo: "https://parth-kadiya.github.io/patient-testimonials-two",
-    },
-    {
       title: "Doctor Website",
+      category: "Frontend Project",
+      categoryBadge: "Frontend Project",
       description:
-        "Complete doctor website with treatments, timings, testimonials and forms.",
+        "Complete doctor website with treatments, timings, patient testimonials, and interactive appointment forms.",
       image: "doctor_one.png",
-      github: "https://github.com/parth-kadiya/sample-doctor-website",
       demo: "https://parth-kadiya.github.io/sample-doctor-website",
     },
+  ];
+
+  const categories = [
+    { id: "All", label: "All Projects", count: allProjects.length },
     {
-      title: "Doctor Website Two",
-      description:
-        "Doctor profile sample with clean UI and medical service highlights.",
-      image: "doctor_two.png",
-      github: "https://github.com/parth-kadiya/second-sample-doctor",
-      demo: "https://parth-kadiya.github.io/second-sample-doctor",
+      id: "Full-Stack Web Application",
+      label: "Full-Stack Web App",
+      count: allProjects.filter((p) => p.category === "Full-Stack Web Application").length,
     },
     {
-      title: "Doctor Website Three",
-      description:
-        "Doctor portfolio template with smooth animations and responsive sections.",
-      image: "doctor_three.png",
-      github: "https://github.com/parth-kadiya/third-sample-doctor",
-      demo: "https://parth-kadiya.github.io/third-sample-doctor",
+      id: "Cross-Platform Application",
+      label: "Cross-Platform App",
+      count: allProjects.filter((p) => p.category === "Cross-Platform Application").length,
     },
     {
-      title: "Doctor Website Four",
-      description:
-        "Doctor profile layout with mobile-friendly design and testimonials.",
-      image: "doctor_four.png",
-      github: "https://github.com/parth-kadiya/fourth-sample-doctor",
-      demo: "https://parth-kadiya.github.io/fourth-sample-doctor",
-    },
-    {
-      title: "Doctor Website Five",
-      description:
-        "Doctor template focused on patient interaction and easy navigation.",
-      image: "doctor_five.png",
-      github: "https://github.com/parth-kadiya/fifth-sample-doctor",
-      demo: "https://github.com/parth-kadiya/fifth-sample-doctor/",
-    },
-    {
-      title: "Independence Day India Map",
-      description:
-        "Creative Independence Day themed website featuring India map highlights.",
-      image: "independence.png",
-      github: "https://github.com/parth-kadiya/independence-day-india-map",
-      demo: "https://parth-kadiya.github.io/independence-day-india-map",
-    },
-    {
-      title: "Doctor Category",
-      description:
-        "Healthcare website for categorizing doctors and services with user-friendly UI.",
-      image: "doctor_category.png",
-      github: "https://github.com/parth-kadiya/doctor-category",
-      demo: "https://parth-kadiya.github.io/doctor-category",
-    },
-    {
-      title: "Doctor Category Two",
-      description:
-        "Doctor listing website with interactive UI for healthcare services.",
-      image: "doctor_category_two.png",
-      github: "https://github.com/parth-kadiya/doctor-category-two",
-      demo: "https://parth-kadiya.github.io/doctor-category-two",
-    },
-    {
-      title: "Kofol Product",
-      description:
-        "Product landing page for Kofol medicine with clean and responsive design.",
-      image: "kofol.png",
-      github: "https://github.com/parth-kadiya/kofol",
-      demo: "https://parth-kadiya.github.io/kofol",
-    },
-    {
-      title: "Himalaya",
-      description:
-        "Branded webpage for Himalaya products with attractive visuals and sections.",
-      image: "himalaya.png",
-      github: "https://github.com/parth-kadiya/Himalaya",
-      demo: "https://parth-kadiya.github.io/Himalaya",
-    },
-    {
-      title: "SwarnimTouch Services",
-      description:
-        "Service showcase website with professional sections and animations.",
-      image: "swarnimtouch.png",
-      github: "https://github.com/parth-kadiya/SwarnimTouch-Services",
-      demo: "https://parth-kadiya.github.io/SwarnimTouch-Services",
-    },
-    {
-      title: "Maze Game",
-      description:
-        "Fun browser-based maze game built with JavaScript and CSS animations.",
-      image: "maze.png",
-      github: "https://github.com/parth-kadiya/Maze-Game",
-      demo: "https://parth-kadiya.github.io/Maze-Game",
-    },
-    {
-      title: "Word Finder Game",
-      description:
-        "Word puzzle game where users find hidden words. Built using HTML, CSS, and JS.",
-      image: "word.png",
-      github: "https://github.com/parth-kadiya/Word-Finder-Game",
-      demo: "https://parth-kadiya.github.io/Word-Finder-Game",
-    },
-    {
-      title: "Logo Game",
-      description:
-        "Interactive logo guessing game testing brand recognition skills.",
-      image: "swarnimtouch.png",
-      github: "https://github.com/parth-kadiya/Logo-Game",
-      demo: "https://parth-kadiya.github.io/Logo-Game",
-    },
-    {
-      title: "BSV",
-      description: "A simple project highlighting BSV theme with styled UI.",
-      image: "bsv.png",
-      github: "https://github.com/parth-kadiya/BSV",
-      demo: "https://parth-kadiya.github.io/BSV",
-    },
-    {
-      title: "15th August",
-      description:
-        "Independence Day webpage with photo upload and patriotic certificate.",
-      image: "15thaug.png",
-      github: "https://github.com/parth-kadiya/15th-August",
-      demo: "https://parth-kadiya.github.io/15th-August",
+      id: "Frontend Project",
+      label: "Frontend Projects",
+      count: allProjects.filter((p) => p.category === "Frontend Project").length,
     },
   ];
+
+  const categoryGroups =
+    activeCategory === "All"
+      ? ["Full-Stack Web Application", "Cross-Platform Application", "Frontend Project"]
+      : [activeCategory];
 
   return (
     <section className="projects-section" id="projects" aria-labelledby="projects-title">
@@ -227,71 +161,101 @@ export default function Projects() {
         What I've Built
       </h2>
 
-      {/* grid will handle any number of projects */}
-      <div className="projects-grid" role="list">
-        {projects.map((project, index) => {
-          const imgSrc = project.image && project.image.startsWith("http")
-            ? project.image
-            : `${process.env.PUBLIC_URL}/assets/${project.image}`;
+      {/* Category Filter Tabs */}
+      <div className="project-category-tabs" role="tablist" aria-label="Project Categories">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            role="tab"
+            aria-selected={activeCategory === cat.id}
+            className={`category-tab-btn ${activeCategory === cat.id ? "active" : ""}`}
+            onClick={() => setActiveCategory(cat.id)}
+          >
+            <span>{cat.label}</span>
+            <span className="category-tab-badge">{cat.count}</span>
+          </button>
+        ))}
+      </div>
 
-          const hasWebP = project.image && !project.image.startsWith("http") && !["kofol.png", "word.png", "swarnimtouch.png", "Image 2.jpg"].includes(project.image);
-          const webpSrc = hasWebP
-            ? `${process.env.PUBLIC_URL}/assets/${project.image.replace(/\.(png|jpe?g)$/i, '.webp')}`
-            : null;
-
-          const placeholder = `${process.env.PUBLIC_URL}/assets/placeholder.png`;
+      {/* Categorized Project Groups */}
+      <div className="project-groups-wrapper">
+        {categoryGroups.map((group) => {
+          const groupProjects = allProjects.filter((p) => p.category === group);
+          if (groupProjects.length === 0) return null;
 
           return (
-            <article
-              className="project-card"
-              key={`${project.title}-${index}`}
-              role="listitem"
-            >
-              <div className="project-icon" aria-hidden="true">
-                <div className="project-icon-inner">
-                  <picture style={{ display: 'contents' }}>
-                    {webpSrc && <source srcSet={webpSrc} type="image/webp" />}
-                    <img
-                      src={imgSrc}
-                      alt={project.title + " preview"}
-                      width="140"
-                      height="140"
-                      loading="lazy"
-                      decoding="async"
-                      onError={(e) => {
-                        if (e.currentTarget.src !== placeholder) {
-                          e.currentTarget.src = placeholder;
-                        }
-                      }}
-                    />
-                  </picture>
-                </div>
+            <div className="project-category-group" key={group}>
+              <h3 className="project-group-title">
+                <span className="group-title-accent">{group}</span>
+                <span className="group-count">({groupProjects.length})</span>
+              </h3>
+
+              <div className="projects-grid" role="list">
+                {groupProjects.map((project, index) => {
+                  const imgSrc =
+                    project.image && project.image.startsWith("http")
+                      ? project.image
+                      : `${process.env.PUBLIC_URL}/assets/${project.image}`;
+
+                  const isSvg = project.image.endsWith(".svg");
+                  const webpImages = ["doctor_one.png", "lathrix.png", "patient_testimonials.png"];
+                  const hasWebP = webpImages.includes(project.image);
+
+                  const webpSrc = hasWebP
+                    ? `${process.env.PUBLIC_URL}/assets/${project.image.replace(/\.(png|jpe?g)$/i, ".webp")}`
+                    : null;
+
+                  return (
+                    <article
+                      className="project-card"
+                      key={`${project.title}-${index}`}
+                      role="listitem"
+                      itemScope
+                      itemType="https://schema.org/SoftwareApplication"
+                    >
+                      <meta itemProp="name" content={project.title} />
+                      <meta itemProp="author" content="Parth Kadiya" />
+                      <meta itemProp="applicationCategory" content={project.category} />
+                      <meta itemProp="url" content={project.demo} />
+                      <div className="project-card-header">
+                        <span className="project-card-badge">{project.categoryBadge}</span>
+                      </div>
+
+                      <div className="project-icon" aria-hidden="true">
+                        <div className="project-icon-inner">
+                          <picture style={{ display: "contents" }}>
+                            {webpSrc && <source srcSet={webpSrc} type="image/webp" />}
+                            <img
+                              src={imgSrc}
+                              alt={`${project.title} - Project by Parth Kadiya`}
+                              width="140"
+                              height="140"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </picture>
+                        </div>
+                      </div>
+                      <div className="project-content">
+                        <h3 itemProp="headline">{project.title}</h3>
+                        <p itemProp="description">{project.description}</p>
+                        <div className="project-links">
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="live-btn"
+                            aria-label={`Open ${project.title} Live Demo by Parth Kadiya`}
+                          >
+                            <span>Live Demo</span>
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
-              <div className="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-links">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="github-btn"
-                    aria-label={`Open ${project.title} GitHub`}
-                  >
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="live-btn"
-                    aria-label={`Open ${project.title} Live Demo`}
-                  >
-                    <span>Live Demo</span>
-                  </a>
-                </div>
-              </div>
-            </article>
+            </div>
           );
         })}
       </div>

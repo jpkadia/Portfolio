@@ -1,6 +1,7 @@
 // src/components/Header.js
 import React, { useState, useEffect, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import ThemeToggle from './ThemeToggle';
 import './Header.css';
 import './Header_m.css';
 
@@ -41,6 +42,12 @@ export default function Header() {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      if (currentScrollY <= 20) {
+        header.classList.remove('hide');
+        header.classList.add('show');
+        lastScrollY = currentScrollY;
+        return;
+      }
       header.classList.toggle('hide', currentScrollY > lastScrollY);
       header.classList.toggle('show', currentScrollY <= lastScrollY);
       lastScrollY = currentScrollY;
@@ -51,7 +58,7 @@ export default function Header() {
       }, 400);
     };
 
-    const mq = window.matchMedia('(min-width: 769px)');
+    const mq = window.matchMedia('(min-width: 1025px)');
     const updateListener = () => {
       if (mq.matches) {
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -141,7 +148,7 @@ export default function Header() {
           id="main-nav"
           aria-label="Main Navigation"
         >
-          {NAV_LINKS.filter(link => link.label !== 'Contact').map(link => {
+          {NAV_LINKS.map(link => {
             if (link.label === 'Technical') {
               return (
                 <div className="dropdown" key="Technical">
@@ -197,9 +204,13 @@ export default function Header() {
               <HashLink
                 key={link.label}
                 to={link.to}
-                scroll={el =>
-                  el.scrollIntoView({ behavior: 'auto', block: 'start' })
-                }
+                scroll={el => {
+                  if (link.label === 'Home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  } else {
+                    el.scrollIntoView({ behavior: 'auto', block: 'start' });
+                  }
+                }}
                 className={activeLink === link.label ? 'active' : ''}
                 onClick={() => handleLinkClick(link.label)}
               >
@@ -210,7 +221,7 @@ export default function Header() {
                     <i className="fa-solid fa-graduation-cap" />
                   )}
                   {link.label === 'Contact' && (
-                    <i className="fas fa-comment" />
+                    <i className="fa-solid fa-envelope" />
                   )}
                   &nbsp;{link.label}
                 </span>
@@ -219,17 +230,7 @@ export default function Header() {
           })}
         </nav>
 
-        <HashLink
-          to="/#contact"
-          scroll={el =>
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-          className="header-contact-btn"
-          onClick={() => handleLinkClick('Contact')}
-          aria-label="Contact Parth Kadiya"
-        >
-          Contact
-        </HashLink>
+        <ThemeToggle />
 
         <button
           className={`nav-toggle ${navActive ? 'active' : ''}`}
@@ -299,7 +300,7 @@ export default function Header() {
             Home:      'fa-house',
             About:     'fa-user',
             Education: 'fa-graduation-cap',
-            Contact:   'fas fa-comment',
+            Contact:   'fa-envelope',
           };
           return (
             <HashLink

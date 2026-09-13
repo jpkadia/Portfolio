@@ -42,6 +42,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Parth Kadiya on LinkedIn"
+              title="Parth Kadiya on LinkedIn"
             >
               <i className="fab fa-linkedin-in" aria-hidden="true"></i> parth-kadiya
             </a>
@@ -53,6 +54,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Parth Kadiya on GitHub"
+              title="Parth Kadiya on GitHub"
             >
               <i className="fab fa-github" aria-hidden="true"></i> parth-kadiya
             </a>
@@ -64,6 +66,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Parth Kadiya on Instagram"
+              title="Parth Kadiya on Instagram"
             >
               <i className="fab fa-instagram" aria-hidden="true"></i> parth_kadiya_612
             </a>
@@ -75,6 +78,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Parth Kadiya on Facebook"
+              title="Parth Kadiya on Facebook"
             >
               <i className="fab fa-facebook-f" aria-hidden="true"></i> parth.kadiya.612
             </a>
@@ -85,13 +89,13 @@ export default function Footer() {
         <div className="footer-column">
           <h3>Parth Kadiya</h3>
           <p>
-            Creative Frontend Developer based in Ahmedabad, passionate about crafting seamless digital experiences using React, JavaScript, and modern UI/UX design.
+            Creative Frontend Developer based in Ahmedabad, passionate about crafting responsive, scalable, and high-performance web applications using React, Next.js, and modern web technologies.
           </p>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>All Rights Reserved 2025</p>
+        <p>All Rights Reserved 2026</p>
         <p>
           <a href="#parth" aria-label="Terms and Condition">Terms &amp; Condition</a> - <a href="#parth" aria-label="Privacy Policy">Privacy Policy</a>
         </p>

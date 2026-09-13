@@ -28,7 +28,12 @@ em, i {
   font-style: italic;
 }
 
-header {
+/* Hide mobile/tablet bottom navigation on desktop */
+.bottom-nav {
+  display: none;
+}
+
+header:not(.admin-dash-navbar) {
   height: 60px; /* fixed height */
   padding: 0 16px;
   overflow: visible;
@@ -41,15 +46,16 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+  transition: transform 0.4s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
   border-radius: 0 0 20px 20px;
 }
 
-header.hide {
+header:not(.admin-dash-navbar).hide {
   transform: translateY(-100%);
 }
 
-header.show {
+header:not(.admin-dash-navbar).show {
   transform: translateY(0);
 }
 

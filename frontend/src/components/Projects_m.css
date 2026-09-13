@@ -1,5 +1,5 @@
-/* Responsive: Mobile (≤768px) */
-@media (max-width: 768px) {
+/* Responsive: Mobile & Tablet (≤1024px) */
+@media (max-width: 1024px) {
   .projects-section {
     padding: 40px 16px;
   }
@@ -12,8 +12,32 @@
 
   .projects-title {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     line-height: 1.4;
+  }
+
+  .project-category-tabs {
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 0 4px;
+  }
+
+  .category-tab-btn {
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 16px 0 16px 0;
+  }
+
+  .project-groups-wrapper {
+    gap: 32px;
+  }
+
+  .project-group-title {
+    font-size: 17px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 0 8px;
   }
 
   .projects-grid {

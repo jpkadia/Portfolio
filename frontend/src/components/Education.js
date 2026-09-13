@@ -54,7 +54,7 @@ export default function Education() {
             <p>
               Completed Bachelor of Science in Computer Application & Information Technology
               from Shreyarth University with a CGPI of 8.5. Built a strong foundation in frontend development,
-              programming, database systems, and UI/UX design principles.
+              programming, database systems, and modern web development technologies.
             </p>
           </div>
           <div className="connector-line"></div>
@@ -84,8 +84,8 @@ export default function Education() {
           <div className="education-box gradient-text-hover">
             <h3>Certifications</h3>
             <p>
-              Earned certifications in Advanced Diploma in Computer Education, Frontend Development, UI/UX Design,
-              and Graphic Design to boost technical and creative capabilities.
+              Earned certifications in Advanced Diploma in Computer Education, Frontend Web Development,
+              and Modern JavaScript to strengthen core software engineering and web application skills.
             </p>
           </div>
           <div className="connector-line"></div>

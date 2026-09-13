@@ -51,12 +51,11 @@ export default function AboutMe() {
     >
       <div className="about-image">
         <picture style={{ display: 'contents' }}>
-          <source srcSet={`${process.env.PUBLIC_URL}/assets/about.webp`} type="image/webp" />
           <img
             src={imgSrc}
-            alt="Parth Kadiya - About Me"
-            width="3468"
-            height="4624"
+            alt="Parth Kadiya - Frontend Developer and Web Developer"
+            width="2390"
+            height="2390"
             loading="lazy"
             decoding="async"
           />
@@ -65,9 +64,8 @@ export default function AboutMe() {
       <div className="about-content">
         <h4 className="typing-text" aria-label="ABOUT ME">{text}</h4>
         <p>
-          I'm Parth Kadiya, a passionate Frontend Developer based in Ahmedabad. I specialize in building responsive and user-friendly interfaces using modern technologies like React.js, Bootstrap, HTML5, CSS3, and JavaScript.
-          My journey began with a deep curiosity for design and user experience, which led me to gain hands-on experience in UI/UX tools such as Figma and Adobe Photoshop.
-          I’ve also interned across various domains including UI/UX design and graphic design, which gives me a well-rounded perspective in frontend development.
+          I'm Parth Kadiya, a passionate Frontend Developer and Web Developer based in Ahmedabad. I specialize in building responsive, scalable, and high-performance web applications using modern technologies like React.js, Next.js, JavaScript, Tailwind CSS, Bootstrap, HTML5, and CSS3.
+          My focus is on writing clean, modular code, building seamless interactive components, and integrating robust backend services and REST APIs to deliver exceptional digital experiences across all devices.
         </p>
       </div>
     </section>

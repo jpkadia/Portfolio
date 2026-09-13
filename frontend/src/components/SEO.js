@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 
-const DEFAULT_TITLE = 'Parth Kadiya | Frontend Developer & UI/UX Designer | Portfolio';
-const DEFAULT_DESCRIPTION = 'Official portfolio of Parth Kadiya, a passionate Frontend Developer and UI/UX Designer based in Ahmedabad. Specializing in React.js, JavaScript, modern web development, and responsive UI design.';
-const DEFAULT_CANONICAL = 'https://parth-kadiya.github.io/portfolio/';
-const DEFAULT_IMAGE = 'https://parth-kadiya.github.io/portfolio/assets/parth.jpg';
+const DEFAULT_TITLE = 'Parth Kadiya | Frontend Developer & Web Developer | Portfolio';
+const DEFAULT_DESCRIPTION = 'Official portfolio of Parth Kadiya (ParthKadiya), a passionate Frontend Developer and Web Developer based in Ahmedabad. Explore projects, skills, and work in React.js, Next.js, and modern full-stack web applications.';
+const DEFAULT_CANONICAL = 'https://parthkadiya.vercel.app/';
+const DEFAULT_IMAGE = 'https://parthkadiya.vercel.app/assets/parth.jpg';
 
 export default function SEO({
   title = DEFAULT_TITLE,

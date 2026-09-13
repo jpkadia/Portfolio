@@ -15,7 +15,7 @@
   max-width: 100%;
   height: auto;
   position: relative;
-  z-index: -1;
+  z-index: 1;
   filter: brightness(0.75);
 }
 
@@ -24,7 +24,7 @@
   top: 10%;            
   left: 52%;
   transform: translate(0, -20%);
-  z-index: 1;
+  z-index: 2;
   max-width: 600px;
   color: #fff;
   padding: 30px;

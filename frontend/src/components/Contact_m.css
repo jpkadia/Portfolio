@@ -1,10 +1,11 @@
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact-section {
     padding: 40px 16px;
   }
 
   .contact-container {
-    max-width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
     padding: 0 10px;
   }
 

@@ -1,0 +1,471 @@
+/* =========================================================
+   DARK THEME STYLESHEET
+   Carefully calibrated to Parth's brand palette:
+   Deep Navy (#051329 / #092144), Teal (#12B9BC), Cyan (#6FCFD3), Crisp White (#FFFFFF)
+   ========================================================= */
+
+/* Global Transition */
+body,
+.bottom-nav,
+.nav a,
+.dropdown-menu,
+.about,
+.about-content,
+.skills-section,
+.skill-category-card,
+.skill-tech-chip,
+.experience-section,
+.timeline-card,
+.projects-section,
+.project-card,
+.category-tab-btn,
+.education-section,
+.education-box,
+.contact-section,
+input,
+textarea,
+.footer-section {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Header Smooth Slide Transition (Desktop) */
+header:not(.admin-dash-navbar) {
+  will-change: transform;
+  transition: transform 0.4s ease-in-out, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* 1. Body & Base Typography */
+body.dark-theme {
+  background-color: #051329 !important;
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6 {
+  color: #ffffff;
+}
+
+body.dark-theme p {
+  color: #cbd5e1;
+}
+
+/* 2. Header & Desktop Navigation */
+body.dark-theme header:not(.admin-dash-navbar) {
+  background-color: #071f43 !important;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45) !important;
+  border-bottom: 1px solid rgba(18, 185, 188, 0.25) !important;
+}
+
+body.dark-theme .nav a {
+  color: #e2e8f0 !important;
+}
+
+body.dark-theme .nav a:hover,
+body.dark-theme .nav a.active {
+  color: #12B9BC !important;
+  border-bottom-color: #12B9BC !important;
+}
+
+body.dark-theme .dropdown-toggle {
+  color: #e2e8f0 !important;
+}
+
+body.dark-theme .dropdown-toggle:hover,
+body.dark-theme .dropdown-toggle.active {
+  color: #12B9BC !important;
+  border-bottom-color: #12B9BC !important;
+}
+
+body.dark-theme .dropdown-menu {
+  background-color: #071f43 !important;
+  border: 1px solid rgba(18, 185, 188, 0.3) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .dropdown-menu a {
+  color: #e2e8f0 !important;
+}
+
+body.dark-theme .dropdown-menu a:hover {
+  background-color: rgba(18, 185, 188, 0.15) !important;
+  color: #12B9BC !important;
+}
+
+/* 3. Mobile & Tablet Bottom Navigation */
+body.dark-theme .bottom-nav {
+  background-color: #071f43 !important;
+  border-top: 1px solid rgba(18, 185, 188, 0.25) !important;
+  box-shadow: 0 -3px 14px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.dark-theme .bottom-nav .nav-item {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .bottom-nav .nav-item.active {
+  color: #12B9BC !important;
+}
+
+body.dark-theme .bottom-nav .nav-item.active i {
+  background-color: #12B9BC !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .bottom-nav .nav-item.active span {
+  color: #12B9BC !important;
+}
+
+/* 4. Parth (Hero) Section */
+body.dark-theme .parth {
+  background-color: transparent;
+}
+
+body.dark-theme .parth-image {
+  position: relative;
+  z-index: 1 !important;
+  filter: brightness(0.85);
+}
+
+body.dark-theme .parth-content {
+  z-index: 2 !important;
+  color: #ffffff;
+}
+
+body.dark-theme .parth-typing {
+  color: #12B9BC;
+}
+
+body.dark-theme .parth h1 {
+  color: #ffffff !important;
+}
+
+body.dark-theme .parth p {
+  color: #cbd5e1 !important;
+}
+
+/* 5. About Me Section */
+body.dark-theme .about {
+  background-color: #051329;
+}
+
+body.dark-theme .about-content h2 {
+  color: #ffffff;
+}
+
+body.dark-theme .about-content p {
+  color: #cbd5e1;
+}
+
+body.dark-theme .about-image img {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .about-content .read-more:hover {
+  background-color: #0a3a78;
+  color: #ffffff;
+}
+
+/* 6. Technical Skills Section */
+body.dark-theme .skills-section {
+  background-color: #051329;
+}
+
+body.dark-theme .skills-title {
+  color: #ffffff;
+}
+
+body.dark-theme .skill-category-card {
+  background-color: #092144;
+  border-color: rgba(18, 185, 188, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .skill-category-card:hover {
+  border-color: #12B9BC;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+}
+
+body.dark-theme .skill-category-name {
+  color: #ffffff;
+}
+
+body.dark-theme .skill-category-desc {
+  color: #94a3b8;
+}
+
+body.dark-theme .skill-category-icon-wrapper {
+  background: linear-gradient(135deg, rgba(18, 185, 188, 0.25), rgba(7, 46, 96, 0.45));
+  border-color: rgba(18, 185, 188, 0.45);
+  color: #6FCFD3;
+}
+
+body.dark-theme .skill-tech-chip {
+  background: #0d284f;
+  border-color: rgba(18, 185, 188, 0.28);
+  color: #e2e8f0;
+}
+
+body.dark-theme .skill-tech-chip:hover {
+  background: #072E60;
+  border-color: #12B9BC;
+  color: #6FCFD3;
+  box-shadow: 0 4px 14px rgba(18, 185, 188, 0.35);
+}
+
+/* 7. Experience Section */
+body.dark-theme .experience-section {
+  background-color: #051329;
+}
+
+body.dark-theme .experience-title {
+  color: #ffffff;
+}
+
+body.dark-theme .timeline-card {
+  background: #092144;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .timeline-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+body.dark-theme .timeline-card h3 {
+  color: #ffffff;
+}
+
+body.dark-theme .timeline-desc {
+  color: #cbd5e1;
+}
+
+body.dark-theme .timeline-duration {
+  color: #6FCFD3;
+}
+
+body.dark-theme .timeline-dot {
+  border-color: #092144;
+}
+
+/* 8. Projects Section */
+body.dark-theme .projects-section {
+  background-color: #051329;
+}
+
+body.dark-theme .projects-title {
+  color: #ffffff;
+}
+
+body.dark-theme .project-group-title {
+  color: #ffffff;
+}
+
+body.dark-theme .category-tab-btn {
+  background-color: #092144;
+  color: #e2e8f0;
+  border-color: #12B9BC;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .category-tab-btn:hover {
+  background-color: rgba(18, 185, 188, 0.2);
+  color: #6FCFD3;
+}
+
+body.dark-theme .category-tab-btn.active,
+body.dark-theme .category-tab-btn.active:hover {
+  background: linear-gradient(135deg, #072E60, #12B9BC);
+  background-origin: border-box !important;
+  background-clip: border-box !important;
+  background-repeat: no-repeat !important;
+  border: 2px solid transparent !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  outline: none !important;
+  box-shadow: 0 6px 18px rgba(18, 185, 188, 0.35) !important;
+}
+
+body.dark-theme .category-tab-badge {
+  background: rgba(18, 185, 188, 0.25);
+  color: #6FCFD3;
+}
+
+body.dark-theme .category-tab-btn.active .category-tab-badge,
+body.dark-theme .category-tab-btn.active:hover .category-tab-badge {
+  background: #ffffff;
+  color: #12B9BC;
+}
+
+body.dark-theme .project-card {
+  background-color: #092144;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .project-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+body.dark-theme .project-content h3 {
+  color: #ffffff;
+}
+
+body.dark-theme .project-content p {
+  color: #cbd5e1;
+}
+
+body.dark-theme .project-icon-inner {
+  background-color: #092144;
+}
+
+body.dark-theme .github-btn {
+  background-color: #092144;
+  color: #12B9BC;
+  border-color: #12B9BC;
+}
+
+/* 9. Education Section */
+body.dark-theme .education-section {
+  background-color: #051329;
+}
+
+body.dark-theme .education-heading h2,
+body.dark-theme .education-title {
+  color: #ffffff;
+}
+
+body.dark-theme .education-box {
+  background: #092144;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .education-box:hover {
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55);
+}
+
+body.dark-theme .education-box h3 {
+  color: #ffffff;
+}
+
+body.dark-theme .education-box p {
+  color: #cbd5e1;
+}
+
+/* 10. Contact Section */
+body.dark-theme .contact-section {
+  background-color: #051329;
+}
+
+body.dark-theme .contact-title {
+  color: #ffffff;
+}
+
+body.dark-theme input[type="text"],
+body.dark-theme input[type="tel"],
+body.dark-theme textarea {
+  background-color: #071a36 !important;
+  color: #ffffff !important;
+  border: 2px solid #14355f !important;
+}
+
+body.dark-theme input[type="text"]::placeholder,
+body.dark-theme input[type="tel"]::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #64748b !important;
+}
+
+body.dark-theme input[type="text"]:focus,
+body.dark-theme input[type="tel"]:focus,
+body.dark-theme textarea:focus {
+  border-color: #12B9BC !important;
+  box-shadow: 0 0 0 3px rgba(18, 185, 188, 0.25) !important;
+}
+
+body.dark-theme .contact-status-message.status-success {
+  background-color: rgba(18, 185, 188, 0.18);
+  border-color: #12B9BC;
+  color: #6FCFD3;
+}
+
+body.dark-theme .field-error-text {
+  color: #fca5a5 !important;
+}
+
+body.dark-theme button.send-button:hover:not(:disabled) {
+  background-color: #0a3a78;
+  box-shadow: 0 6px 16px rgba(18, 185, 188, 0.4);
+}
+
+/* Hover Swipe Glow Effect on Cards in Dark Mode */
+body.dark-theme .timeline-card::before,
+body.dark-theme .project-card::before,
+body.dark-theme .education-box::before {
+  background: rgba(18, 185, 188, 0.22);
+}
+
+/* 11. Footer Section */
+body.dark-theme .footer-section {
+  background-color: #030d1c !important;
+  border-top: 1px solid rgba(18, 185, 188, 0.25) !important;
+}
+
+body.dark-theme .footer-column p,
+body.dark-theme .footer-link {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .footer-link:hover {
+  color: #6FCFD3 !important;
+}
+
+body.dark-theme .footer-bottom {
+  border-top-color: rgba(18, 185, 188, 0.25);
+  color: #94a3b8;
+}
+
+body.dark-theme .footer-bottom a {
+  color: #cbd5e1;
+}
+
+body.dark-theme .footer-bottom a:hover {
+  color: #6FCFD3;
+}
+
+/* 12. Back To Top Button */
+body.dark-theme .back-to-top {
+  background-color: #12B9BC;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .back-to-top:hover {
+  background-color: #072E60;
+  box-shadow: 0 6px 20px rgba(18, 185, 188, 0.4);
+}
+
+/* 13. Not Found (404) Section */
+body.dark-theme .not-found-section {
+  background-color: #051329;
+}
+
+body.dark-theme .not-found-container {
+  background: #092144;
+  border-color: rgba(18, 185, 188, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .not-found-title {
+  color: #ffffff;
+}
+
+body.dark-theme .not-found-description {
+  color: #cbd5e1;
+}
+
+body.dark-theme .not-found-btn:hover {
+  background-color: #0a3a78;
+  box-shadow: 0 6px 16px rgba(18, 185, 188, 0.4);
+}
+

@@ -96,6 +96,7 @@
     background: rgba(18, 185, 188, 0.12);
     transition: right 0.5s ease;
     z-index: -1;
+    pointer-events: none;
 }
 
 .education-box:hover::before {

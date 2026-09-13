@@ -31,8 +31,8 @@
   }
 }
 
-/* Mobile responsive fix */
-@media (max-width: 768px) {
+/* Mobile & Tablet responsive fix */
+@media (max-width: 1024px) {
   .back-to-top {
     top: auto;
     bottom: 70px;
