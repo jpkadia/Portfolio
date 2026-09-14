@@ -1,6 +1,6 @@
 .experience-section {
   background-color: #ffffff;
-  padding: 60px 20px;
+  padding: 60px 24px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }
@@ -41,7 +41,7 @@
 .experience-timeline {
   position: relative;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1240px;
   padding-left: 20px;
   border-left: 3px solid #12B9BC;
 }

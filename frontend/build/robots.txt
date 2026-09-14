@@ -6,7 +6,7 @@ Disallow: /admin
 Disallow: /admin/
 
 # Host
-Host: https://parth-kadiya.github.io
+Host: https://parthkadiya.vercel.app
 
 # Sitemap
-Sitemap: https://parth-kadiya.github.io/portfolio/sitemap.xml
+Sitemap: https://parthkadiya.vercel.app/sitemap.xml

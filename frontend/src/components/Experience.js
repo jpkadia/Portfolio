@@ -41,7 +41,7 @@ export default function Experience() {
       company: 'SwarnimTouch Solutions',
       duration: 'September 2024 to Present',
       description:
-        'Developing and maintaining responsive, high-performance web applications using React.js, JavaScript, HTML5, CSS3, Tailwind CSS, and Bootstrap. Implementing modern frontend architectures, RESTful API integrations, cross-browser compatibility, and code optimization to deliver scalable and user-centric digital web solutions.'
+        'Developing and maintaining responsive, high-performance web applications using React.js, JavaScript, HTML5, CSS3, Tailwind CSS, and Bootstrap, along with backend development using Node.js and Express.js. Implementing modern frontend architectures, RESTful API integrations, server-side development, cross-browser compatibility, and code optimization to deliver scalable and user-centric full-stack web solutions.'
     }
   ];
 

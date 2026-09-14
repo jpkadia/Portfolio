@@ -5,13 +5,13 @@
 
 .contact-section {
   background-color: #ffffff;
-  padding: 60px 20px;
+  padding: 60px 24px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 
 .contact-container {
-    max-width: 700px;
+    max-width: 1240px;
     margin: 0 auto;
 }
 
@@ -67,6 +67,9 @@ textarea::placeholder {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 input[type="text"],

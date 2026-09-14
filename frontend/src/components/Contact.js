@@ -154,6 +154,16 @@ export default function Contact() {
     }
   };
 
+  // Auto-dismiss success message after 4 seconds
+  useEffect(() => {
+    if (status.type === 'success') {
+      const timer = setTimeout(() => {
+        setStatus({ type: '', message: '' });
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
   // Typewriter animation for "GET IN TOUCH"
   const [text, setText] = useState('');
   const fullText = 'GET IN TOUCH';

@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://parth-kadiya.github.io/portfolio/</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://parthkadiya.vercel.app/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://parth-kadiya.github.io/portfolio/assets/parth.jpg</image:loc>
-      <image:title>Parth Kadiya - Frontend Developer</image:title>
-      <image:caption>Parth Kadiya Portfolio</image:caption>
+      <image:loc>https://parthkadiya.vercel.app/assets/parth.jpg</image:loc>
+      <image:title>Parth Kadiya - Frontend Developer &amp; Web Developer</image:title>
+      <image:caption>Parth Kadiya Portfolio - ParthKadiya</image:caption>
     </image:image>
   </url>
 </urlset>
