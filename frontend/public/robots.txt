@@ -1,4 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
+# Googlebot-Image permissions for favicon & brand assets
+User-agent: Googlebot-Image
+Allow: /
+
+# General crawlers
 User-agent: *
 Allow: /
 Disallow: /api/

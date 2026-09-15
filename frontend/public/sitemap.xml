@@ -11,5 +11,10 @@
       <image:title>Parth Kadiya - Web Developer Portfolio</image:title>
       <image:caption>Official Portfolio of Parth Kadiya (ParthKadiya) - Web Developer</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/logo192.png</image:loc>
+      <image:title>Parth Kadiya - Official Favicon &amp; Brand Logo</image:title>
+      <image:caption>Parth Kadiya Logo</image:caption>
+    </image:image>
   </url>
 </urlset>

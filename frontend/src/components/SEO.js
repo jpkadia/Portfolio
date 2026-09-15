@@ -33,6 +33,7 @@ export default function SEO({
     setMeta('name', 'description', description);
     setMeta('name', 'keywords', keywords);
     setMeta('name', 'robots', robots);
+    setMeta('property', 'og:site_name', 'Parth Kadiya');
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:url', canonical);
@@ -56,6 +57,7 @@ export default function SEO({
       <meta name="keywords" content={keywords} />
       <meta name="robots" content={robots} />
       <link rel="canonical" href={canonical} />
+      <meta property="og:site_name" content="Parth Kadiya" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
