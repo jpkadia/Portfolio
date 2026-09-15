@@ -63,18 +63,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 10px;
   margin: 0 auto 36px auto;
-  max-width: 900px;
+  max-width: 1240px;
   padding: 0 10px;
 }
 
 .category-tab-btn {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 10px 18px;
   border-radius: 20px 0 20px 0;
   border: 2px solid #12B9BC;
   background-color: #ffffff;
@@ -85,6 +85,8 @@
   align-items: center;
   gap: 8px;
   box-shadow: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .category-tab-btn:hover {
@@ -177,10 +179,11 @@
 
 /* Grid */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+  display: flex;
+  justify-content: center;
   align-items: stretch;
+  flex-wrap: wrap;
+  gap: 28px;
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
@@ -219,9 +222,10 @@
   align-items: center;
   padding: 18px;
   min-height: 240px;
+  flex: 0 1 380px;
   width: 100%;
   max-width: 380px;
-  margin: 0 auto;
+  margin: 0;
   box-sizing: border-box;
   position: relative;
   z-index: 2;

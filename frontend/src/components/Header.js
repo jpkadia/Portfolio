@@ -131,16 +131,24 @@ export default function Header() {
     <>
       <header className={navActive ? 'show' : ''} role="banner">
         <div className="logo">
-          <picture style={{ display: 'contents' }}>
-            <source srcSet={`${process.env.PUBLIC_URL}/assets/logo.webp`} type="image/webp" />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/logo.png`}
-              alt="Parth Kadiya Logo"
-              className="logo-img"
-              width="116"
-              height="58"
-            />
-          </picture>
+          <HashLink
+            to="/#parth"
+            className="logo-link"
+            title="Parth Kadiya - Web Developer Portfolio"
+            aria-label="Parth Kadiya - Web Developer Portfolio"
+            onClick={() => handleLinkClick('Home')}
+          >
+            <picture style={{ display: 'contents' }}>
+              <source srcSet={`${process.env.PUBLIC_URL}/assets/logo.webp`} type="image/webp" />
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/logo.png`}
+                alt="Parth Kadiya - Web Developer Portfolio Logo"
+                className="logo-img"
+                width="116"
+                height="58"
+              />
+            </picture>
+          </HashLink>
         </div>
 
         <nav

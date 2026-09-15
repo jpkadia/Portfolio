@@ -47,6 +47,15 @@
     text-align: center;
   }
 
+  /* 3rd row: Center the 5th (Game) category tab horizontally on mobile & tablet */
+  .project-category-tabs .category-tab-btn:nth-child(5),
+  .project-category-tabs .category-tab-btn:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 5px);
+    max-width: 215px;
+  }
+
   .project-groups-wrapper {
     gap: 32px;
   }

@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 
-const DEFAULT_TITLE = 'Parth Kadiya | Frontend Developer & Web Developer | Portfolio';
-const DEFAULT_DESCRIPTION = 'Official portfolio of Parth Kadiya (ParthKadiya), a passionate Frontend Developer and Web Developer based in Ahmedabad. Explore projects, skills, and work in React.js, Next.js, and modern full-stack web applications.';
+const DEFAULT_TITLE = 'Parth Kadiya | Web Developer | Portfolio';
+const DEFAULT_DESCRIPTION = 'Official portfolio of Parth Kadiya (ParthKadiya) - Web Developer & Frontend Developer based in Ahmedabad. Explore web development projects, technical skills, and software applications by Parth Kadiya.';
+const DEFAULT_KEYWORDS = 'Parth Kadiya, Parth Kadiya Portfolio, Parth Web Developer, Parth Kadiya Web Developer, Parth Portfolio, ParthKadiya, parth kadiya, parthkadiya, Frontend Developer Ahmedabad, Web Developer Ahmedabad, React Developer, Full Stack Developer, JavaScript Developer, Next.js, Portfolio';
 const DEFAULT_CANONICAL = 'https://parthkadiya.vercel.app/';
 const DEFAULT_IMAGE = 'https://parthkadiya.vercel.app/assets/parth.jpg';
 
 export default function SEO({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
+  keywords = DEFAULT_KEYWORDS,
   canonical = DEFAULT_CANONICAL,
   robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   image = DEFAULT_IMAGE,
@@ -29,6 +31,7 @@ export default function SEO({
     };
 
     setMeta('name', 'description', description);
+    setMeta('name', 'keywords', keywords);
     setMeta('name', 'robots', robots);
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', description);
@@ -44,12 +47,13 @@ export default function SEO({
     if (linkCanonical) {
       linkCanonical.setAttribute('href', canonical);
     }
-  }, [title, description, canonical, robots, image, type]);
+  }, [title, description, keywords, canonical, robots, image, type]);
 
   return (
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
       <meta name="robots" content={robots} />
       <link rel="canonical" href={canonical} />
       <meta property="og:title" content={title} />

@@ -119,6 +119,19 @@ export default function Projects() {
       image: "doctor_one.png",
       demo: "https://parth-kadiya.github.io/sample-doctor-website",
     },
+
+    // 4. Game
+    {
+      title: "Orbit Lander",
+      category: "Game",
+      categoryBadge: "3D Space Game",
+      description:
+        "Orbit Lander is a 3D space game where you launch from one planet and land on another. Avoid asteroids, control your speed, and make a safe landing.",
+      image: "orbit_lander.svg",
+      demo: `${process.env.PUBLIC_URL}/OrbitLanderSetup.exe`,
+      isDownload: true,
+      downloadName: "OrbitLanderSetup.exe",
+    },
   ];
 
   const categories = [
@@ -138,11 +151,16 @@ export default function Projects() {
       label: "Frontend Projects",
       count: allProjects.filter((p) => p.category === "Frontend Project").length,
     },
+    {
+      id: "Game",
+      label: "Game",
+      count: allProjects.filter((p) => p.category === "Game").length,
+    },
   ];
 
   const categoryGroups =
     activeCategory === "All"
-      ? ["Full-Stack Web Application", "Cross-Platform Application", "Frontend Project"]
+      ? ["Full-Stack Web Application", "Cross-Platform Application", "Frontend Project", "Game"]
       : [activeCategory];
 
   return (
@@ -241,12 +259,17 @@ export default function Projects() {
                         <div className="project-links">
                           <a
                             href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            {...(project.isDownload
+                              ? { download: project.downloadName || "OrbitLanderSetup.exe" }
+                              : { target: "_blank", rel: "noopener noreferrer" })}
                             className="live-btn"
-                            aria-label={`Open ${project.title} Live Demo by Parth Kadiya`}
+                            aria-label={
+                              project.isDownload
+                                ? `Download ${project.title} by Parth Kadiya`
+                                : `Open ${project.title} Live Demo by Parth Kadiya`
+                            }
                           >
-                            <span>Live Demo</span>
+                            <span>{project.isDownload ? "Download Game" : "Live Demo"}</span>
                           </a>
                         </div>
                       </div>
