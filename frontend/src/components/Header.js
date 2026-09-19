@@ -31,8 +31,28 @@ export default function Header() {
     setIgnoreScroll(true);
     ignoreScrollTimeout.current = setTimeout(() => {
       setIgnoreScroll(false);
-    }, 800);
+    }, 1200);
   };
+
+  // Listen for programmatic nav jumps (e.g. from BackToTop button)
+  useEffect(() => {
+    const handleNavJump = (e) => {
+      const target = (e && e.detail) || 'Home';
+      setActiveLink(target);
+      setNavActive(false);
+      setMobileTechOpen(false);
+      clearTimeout(ignoreScrollTimeout.current);
+      setIgnoreScroll(true);
+      ignoreScrollTimeout.current = setTimeout(() => {
+        setIgnoreScroll(false);
+      }, 1400);
+    };
+
+    window.addEventListener('navJump', handleNavJump);
+    return () => {
+      window.removeEventListener('navJump', handleNavJump);
+    };
+  }, []);
 
   // Header hide/show on scroll — desktop only
   useEffect(() => {
@@ -96,6 +116,13 @@ export default function Header() {
 
       rafId = requestAnimationFrame(() => {
         rafId = null;
+
+        // Fast path for top of page
+        if (window.scrollY <= 100) {
+          setActiveLink(prev => (prev === 'Home' ? prev : 'Home'));
+          return;
+        }
+
         const midpoint = window.scrollY + window.innerHeight / 2;
 
         // Top-level links with IDs

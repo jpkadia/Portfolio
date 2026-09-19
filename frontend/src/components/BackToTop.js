@@ -28,7 +28,10 @@ export default function BackToTop() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('navJump', { detail: 'Home' }));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (

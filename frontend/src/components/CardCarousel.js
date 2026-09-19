@@ -17,8 +17,10 @@ export default function CardCarousel({ items, renderItem, category }) {
   const [canScrollNext, setCanScrollNext] = useState(false);
 
   // Timer refs for rock-solid autoplay & pause management
+  const carouselContainerRef = useRef(null);
   const autoplayTimerRef = useRef(null);
   const isHoveredRef = useRef(false);
+  const isInViewRef = useRef(false);
 
   // Clear any existing autoplay timer
   const stopAutoplay = useCallback(() => {
@@ -42,14 +44,17 @@ export default function CardCarousel({ items, renderItem, category }) {
     (delay = 3500) => {
       stopAutoplay();
 
+      // Only autoplay if carousel is currently visible in viewport
+      if (!isInViewRef.current) return;
+
       // Only autoplay if there are multiple snaps and scrolling is possible
       if (!emblaApi) return;
       if (!emblaApi.canScrollNext() && !emblaApi.canScrollPrev()) return;
       if (emblaApi.scrollSnapList().length <= 1) return;
 
       autoplayTimerRef.current = setTimeout(() => {
-        // Don't auto-advance if user's cursor is hovering
-        if (isHoveredRef.current) return;
+        // Don't auto-advance if user's cursor is hovering or scrolled out of view
+        if (!isInViewRef.current || isHoveredRef.current) return;
 
         if (emblaApi.canScrollNext()) {
           emblaApi.scrollNext();
@@ -66,10 +71,12 @@ export default function CardCarousel({ items, renderItem, category }) {
 
   // Handle any user interaction (click next, click prev, click dot, or touch drag):
   // 1. Immediately stops autoplay
-  // 2. Waits 6.5 seconds of inactivity before restarting autoplay
+  // 2. Waits 6.5 seconds of inactivity before restarting autoplay (if still in view)
   const handleUserInteraction = useCallback(() => {
     stopAutoplay();
-    scheduleNextAutoplay(6500);
+    if (isInViewRef.current) {
+      scheduleNextAutoplay(6500);
+    }
   }, [stopAutoplay, scheduleNextAutoplay]);
 
   // User click handlers
@@ -94,7 +101,7 @@ export default function CardCarousel({ items, renderItem, category }) {
     [emblaApi, handleUserInteraction]
   );
 
-  // Hover handlers: pause while hovering, resume on mouse leave
+  // Hover handlers: pause while hovering, resume on mouse leave (if in view)
   const handleMouseEnter = useCallback(() => {
     isHoveredRef.current = true;
     stopAutoplay();
@@ -102,10 +109,44 @@ export default function CardCarousel({ items, renderItem, category }) {
 
   const handleMouseLeave = useCallback(() => {
     isHoveredRef.current = false;
-    scheduleNextAutoplay(3500);
+    if (isInViewRef.current) {
+      scheduleNextAutoplay(3500);
+    }
   }, [scheduleNextAutoplay]);
 
-  // Main effect to bind Embla events and initiate autoplay
+  // Viewport intersection observer: start autoplay ONLY when visible in viewport, pause when leaving
+  useEffect(() => {
+    const node = carouselContainerRef.current;
+    if (!node) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      isInViewRef.current = true;
+      scheduleNextAutoplay(3500);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inView = Boolean(entry && entry.isIntersecting);
+        isInViewRef.current = inView;
+
+        if (inView) {
+          scheduleNextAutoplay(3500);
+        } else {
+          stopAutoplay();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [scheduleNextAutoplay, stopAutoplay]);
+
+  // Main effect to bind Embla events
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -116,8 +157,9 @@ export default function CardCarousel({ items, renderItem, category }) {
     emblaApi.on("settle", updateState);
     emblaApi.on("pointerDown", handleUserInteraction);
 
-    // Start automatic sliding
-    scheduleNextAutoplay(3500);
+    if (isInViewRef.current) {
+      scheduleNextAutoplay(3500);
+    }
 
     return () => {
       stopAutoplay();
@@ -136,7 +178,9 @@ export default function CardCarousel({ items, renderItem, category }) {
         emblaApi.reInit();
         emblaApi.scrollTo(0, true);
         updateState();
-        scheduleNextAutoplay(3500);
+        if (isInViewRef.current) {
+          scheduleNextAutoplay(3500);
+        }
       }, 50);
       return () => clearTimeout(timer);
     }
@@ -158,6 +202,7 @@ export default function CardCarousel({ items, renderItem, category }) {
 
   return (
     <div
+      ref={carouselContainerRef}
       className={`embla-carousel-wrapper ${modifierClass}`}
       role="region"
       aria-roledescription="carousel"
