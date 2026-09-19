@@ -71,7 +71,7 @@
   .education-box p {
     font-size: 14px;
     color: #072E60;
-    text-align: justify;
+    text-align: left !important;
   }
 
   .education-entry.left .connector-line,

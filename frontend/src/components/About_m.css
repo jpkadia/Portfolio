@@ -48,7 +48,7 @@
   }
 
   .about-content p {
-    text-align: justify;         /* Maintain justify if preferred */
+    text-align: left !important;
     font-size: 15px;             /* Slightly smaller font */
   }
 
