@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://parthkadiya.vercel.app/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/parth.jpg</image:loc>
+      <image:title>Parth Kadiya - Web Developer Portfolio</image:title>
+      <image:caption>Official Portfolio of Parth Kadiya (ParthKadiya) - Web Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/parth.webp</image:loc>
+      <image:title>Parth Kadiya - Web Developer Hero Image</image:title>
+      <image:caption>Parth Kadiya Web Developer Portfolio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/parth-kadiya-about.jpg</image:loc>
+      <image:title>About Parth Kadiya - Web Developer Portfolio</image:title>
+      <image:caption>Parth Kadiya - Web Developer based in Ahmedabad</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/parth-kadiya-about.webp</image:loc>
+      <image:title>Parth Kadiya - About Me Profile Photo</image:title>
+      <image:caption>Parth Kadiya - Frontend Developer &amp; Web Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/logo.webp</image:loc>
+      <image:title>Parth Kadiya - Official Brand Logo</image:title>
+      <image:caption>Parth Kadiya Logo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/lathrix.webp</image:loc>
+      <image:title>Product Website LàThrix - Project by Parth Kadiya</image:title>
+      <image:caption>Modern Frontend Showcase for LàThrix Hair Care by Parth Kadiya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/patient_testimonials.webp</image:loc>
+      <image:title>Patient Testimonials - Project by Parth Kadiya</image:title>
+      <image:caption>Animated Testimonials Showcase by Parth Kadiya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/doctor_one.webp</image:loc>
+      <image:title>Doctor Website Portal - Project by Parth Kadiya</image:title>
+      <image:caption>Clinic &amp; Appointment Web Portal by Parth Kadiya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://parthkadiya.vercel.app/assets/bondera-icon.webp</image:loc>
+      <image:title>Bondera App - Project by Parth Kadiya</image:title>
+      <image:caption>Cross-Platform Application Bondera by Parth Kadiya</image:caption>
+    </image:image>
+  </url>
+</urlset>

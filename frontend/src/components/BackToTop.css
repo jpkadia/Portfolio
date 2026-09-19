@@ -1,0 +1,40 @@
+/* src/components/BackToTop.css */
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #12B9BC;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 16px;
+  font-size: 18px;
+  border-radius: 20px 0 20px 0;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(7, 46, 96, 0.2);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.back-to-top:hover {
+  background-color: #072E60;
+  transform: translateY(-4px);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.93);
+  }
+}
+
+/* Mobile & Tablet responsive fix */
+@media (max-width: 1024px) {
+  .back-to-top {
+    top: auto;
+    bottom: 70px;
+  }
+}

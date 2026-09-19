@@ -1,0 +1,41 @@
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .footer-column {
+    min-width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .footer-column p {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .footer-link i {
+    margin-right: 6px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 20px;
+    padding-top: 12px;
+  }
+}

@@ -1,0 +1,60 @@
+/* =========================================================
+   UNIFIED RESPONSIVE CONTAINER & SECTION LAYOUT SYSTEM
+   Applies consistent max-width, horizontal gutters, and responsive
+   margins across all sections (About, Skills, Experience, Projects,
+   Education, Contact, and Footer).
+   ========================================================= */
+
+:root {
+  /* Default: Large Desktop (>= 1440px / 1920px) */
+  --content-max-width: 1240px;
+  --section-padding-x: clamp(60px, 5.5vw, 92px);
+  --section-padding-y: 60px;
+}
+
+/* Laptop & Medium Desktop (1281px - 1439px) */
+@media (min-width: 1281px) and (max-width: 1439px) {
+  :root {
+    --content-max-width: 1120px;
+    --section-padding-x: clamp(52px, 5vw, 80px);
+    --section-padding-y: 55px;
+  }
+}
+
+/* Small Laptop / Standard 13" Display (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  :root {
+    --content-max-width: 1040px;
+    --section-padding-x: clamp(44px, 4.8vw, 68px);
+    --section-padding-y: 50px;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --content-max-width: 740px;
+    --section-padding-x: clamp(24px, 3.5vw, 36px);
+    --section-padding-y: 45px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --content-max-width: 100%;
+    --section-padding-x: clamp(16px, 4vw, 24px);
+    --section-padding-y: 40px;
+  }
+}
+
+/* Unified Container Helper */
+.section-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+  box-sizing: border-box;
+}

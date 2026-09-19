@@ -1,0 +1,89 @@
+/* parth Section */
+.parth {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    /* height: 100vh; */
+    overflow: visible;
+    min-height: 100vh;
+}
+
+.parth-image {
+  display: block;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  filter: brightness(0.75);
+}
+
+.parth-content {
+  position: absolute;
+  top: 10%;            
+  left: 52%;
+  transform: translate(0, -20%);
+  z-index: 2;
+  max-width: 600px;
+  color: #fff;
+  padding: 30px;
+}
+
+.parth-typing {
+  min-height: 58px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Accessible text hidden visually but fully indexable by search engines & screen readers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.parth h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.parth p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.skills-typing {
+  font-size: 24px;
+  font-style: italic;
+  color: #12B9BC;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.skills-typing::after {
+  content: '|';
+  color: #6FCFD3;
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,16 @@
+# Googlebot-Image permissions for favicon & brand assets
+User-agent: Googlebot-Image
+Allow: /
+
+# General crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /admin/
+
+# Host
+Host: parthkadiya.vercel.app
+
+# Sitemap
+Sitemap: https://parthkadiya.vercel.app/sitemap.xml

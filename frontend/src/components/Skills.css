@@ -1,0 +1,244 @@
+/* Skills & Expertise Section */
+.skills-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: var(--section-padding-y, 60px) 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.skills-container {
+  width: 100%;
+  max-width: var(--content-max-width, 1220px);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x, 32px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.skills-subtitle {
+  color: #12B9BC;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.skills-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #072E60;
+  letter-spacing: -0.5px;
+}
+
+.skills-categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Category Card */
+.skill-category-card {
+  flex: 0 1 calc((100% - (2 * 28px)) / 3);
+  width: calc((100% - (2 * 28px)) / 3);
+  max-width: calc((100% - (2 * 28px)) / 3);
+  min-width: 270px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 36px 0 36px 0;
+  box-shadow: 0 6px 24px rgba(7, 46, 96, 0.07);
+  border: 1.5px solid rgba(18, 185, 188, 0.22);
+  padding: 34px 28px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 34px rgba(7, 46, 96, 0.13);
+  border-color: #12B9BC;
+}
+
+/* Card Header */
+.skill-card-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.skill-category-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(18, 185, 188, 0.15) 0%, rgba(7, 46, 96, 0.08) 100%);
+  border: none !important;
+  box-shadow: 0 0 0 1.5px rgba(18, 185, 188, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #12B9BC;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  outline: 1px solid transparent;
+  transform: translateZ(0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.skill-category-card:hover .skill-category-icon-wrapper {
+  background: linear-gradient(135deg, #12B9BC 0%, #072E60 100%);
+  color: #ffffff;
+  transform: rotate(6deg) translateZ(0);
+  box-shadow: 0 0 0 2px #12B9BC, 0 6px 18px rgba(18, 185, 188, 0.35);
+}
+
+.skill-category-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-category-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #12B9BC;
+  background: rgba(18, 185, 188, 0.1);
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 4px;
+}
+
+.skill-category-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #072E60;
+  margin: 0;
+}
+
+.skill-category-desc {
+  font-size: 13.5px;
+  color: #4a6385;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+/* Tech Chips Cluster - 2 per row layout placed directly under description */
+.skill-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0;
+  width: 100%;
+}
+
+.skill-tech-chip {
+  flex: 0 1 calc((100% - 10px) / 2);
+  width: calc((100% - 10px) / 2);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f7fafc;
+  border: 1px solid rgba(7, 46, 96, 0.12);
+  padding: 9px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #072E60;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  white-space: nowrap;
+}
+
+.skill-tech-chip:hover {
+  background: #ffffff;
+  border-color: #12B9BC;
+  box-shadow: 0 4px 14px rgba(18, 185, 188, 0.22);
+  transform: translateY(-2px);
+  color: #12B9BC;
+}
+
+.skill-chip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.skill-chip-label {
+  white-space: nowrap;
+}
+
+/* Typewriter Subtitle Animation */
+.typing-text {
+  font-size: 24px;
+  font-style: italic;
+  color: #12B9BC;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.typing-text::after {
+  content: '|';
+  color: #6FCFD3;
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+/* Small Laptop / Desktop (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .skills-categories-grid {
+    gap: 22px;
+  }
+
+  .skill-category-card {
+    flex: 0 1 calc((100% - (2 * 22px)) / 3);
+    width: calc((100% - (2 * 22px)) / 3);
+    max-width: calc((100% - (2 * 22px)) / 3);
+    min-width: 250px;
+    padding: 28px 18px;
+  }
+
+  .skill-chips-container {
+    gap: 8px;
+  }
+
+  .skill-tech-chip {
+    flex: 0 1 calc((100% - 8px) / 2);
+    width: calc((100% - 8px) / 2);
+    padding: 8px 8px;
+    font-size: 12px;
+    gap: 6px;
+  }
+}
+

@@ -1,0 +1,178 @@
+/* Mobile & Tablet Bottom Navigation & Header Fixes (≤1024px) */
+@media (max-width: 1024px) {
+  /* 0. Header hide/show disabled */
+  header:not(.admin-dash-navbar).hide,
+  header:not(.admin-dash-navbar).show {
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
+
+  /* 1. Hide desktop nav and buttons */
+  header:not(.admin-dash-navbar) .nav,
+  header:not(.admin-dash-navbar) .nav-toggle {
+    display: none !important;
+  }
+
+  .theme-toggle-btn {
+    position: absolute !important;
+    top: 12px !important;
+    right: 16px !important;
+    margin: 0 !important;
+    z-index: 1001 !important;
+  }
+
+  /* 2. Add bottom padding so content doesn't overlap bottom-nav */
+  body {
+    padding-bottom: 60px !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 3. Bottom-nav container — always fixed */
+  .bottom-nav {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+    height: 60px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 -2px 8px rgba(7, 46, 96, 0.1) !important;
+    border-top: 1px solid rgba(18, 185, 188, 0.2) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    z-index: 10000 !important;
+  }
+
+  /* 4. Items styling */
+  .bottom-nav .nav-item {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #072E60 !important;
+    font-size: 0.75rem !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    transition: color 0.2s ease !important;
+    position: relative !important;
+  }
+
+  .bottom-nav .nav-item i {
+  font-size: 1.2rem;
+  padding: 8px 18px;
+  border-radius: 16px;
+  transition: background 0.3s ease;
+  margin-bottom: 3px;
+  }
+
+  .bottom-nav .nav-item span {
+    margin-top: 0 !important;
+    line-height: 1 !important;
+  }
+
+  /* Active item style */
+  .bottom-nav .nav-item.active {
+    color: #12B9BC !important;
+  }
+  .bottom-nav .nav-item.active > i {
+    background-color: #12B9BC !important;
+    color: #ffffff !important;
+  }
+
+    /* Ensure the text label isn’t affected */
+  .bottom-nav .nav-item.active span {
+    color: #12B9BC !important;
+    margin-top: 0 !important;
+  }
+
+  /* 5. Technical dropdown arrow & menu adjustments */
+  .bottom-nav .nav-item.dropdown .dropdown-arrow {
+   display: none;
+  }
+  .bottom-nav .nav-item.dropdown.open .dropdown-arrow {
+    transform: rotate(180deg) !important;
+  }
+
+  .bottom-nav .nav-item.dropdown .dropdown-menu {
+    display: none !important;
+    position: absolute !important;
+    bottom: 50px !important;
+    top: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    background: #ffffff !important;
+    box-shadow: 0 -1px 8px rgba(7, 46, 96, 0.1) !important;
+    border-top: 1px solid rgba(18, 185, 188, 0.2) !important;
+    flex-direction: column !important;
+    z-index: 10001 !important;
+  }
+  .bottom-nav .nav-item.dropdown.open .dropdown-menu {
+    display: flex !important;
+  }
+
+  .bottom-nav .nav-item.dropdown .dropdown-menu a {
+    padding: 10px !important;
+    color: #072E60 !important;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+  }
+  .bottom-nav .nav-item.dropdown .dropdown-menu a:last-child {
+    border-bottom: none !important;
+  }
+  .bottom-nav .nav-item.dropdown .dropdown-menu a:hover,
+  .bottom-nav .nav-item.dropdown .dropdown-menu a.active {
+    background-color: rgba(18, 185, 188, 0.1) !important;
+    color: #12B9BC !important;
+  }
+  /* Ensure non-active dropdown items don't inherit active color or background */
+  .bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active),
+  .bottom-nav .nav-item.dropdown.active .dropdown-menu a:not(.active),
+  .bottom-nav .nav-item.dropdown.open:not(.active) .dropdown-menu a:not(.active) {
+    color: #072E60 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+  .bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active) i,
+  .bottom-nav .nav-item.dropdown.active .dropdown-menu a:not(.active) i {
+    color: #072E60 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-right: 8px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+    /* 6. Remove Technical’s dropdown arrow on mobile */
+  .bottom-nav .nav-item.dropdown .dropdown-arrow {
+    display: none !important;
+  }
+}
+
+.bottom-nav .nav-item.dropdown .dropdown-menu a i,
+.bottom-nav .nav-item.dropdown .dropdown-menu a:not(.active) i {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-right: 8px !important;
+    border-radius: 0 !important;
+    color: #072E60 !important;
+    box-shadow: none !important;
+}
+
+.bottom-nav .nav-item.dropdown .dropdown-menu a.active i {
+    background-color: #12B9BC !important;
+    color: #ffffff !important;
+    padding: 8px 18px !important;
+    border-radius: 16px !important;
+    margin-right: 8px !important;
+}

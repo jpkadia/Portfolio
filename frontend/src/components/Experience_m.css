@@ -1,0 +1,100 @@
+/* Responsive: Mobile & Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .experience-section {
+    padding: var(--section-padding-y, 40px) 0;
+  }
+
+  .experience-subtitle {
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .experience-title {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+
+  .experience-timeline {
+    padding-left: 15px;
+    border-left: 2px solid #12B9BC;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timeline-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+  }
+
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    left: -10px;
+    top: 10px;
+    box-shadow: 0 0 0 3px rgba(18, 185, 188, 0.2);
+  }
+
+  .timeline-card {
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .timeline-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    letter-spacing: 0.6px;
+    border-radius: 10px 0 10px 0;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+
+  .timeline-badge.startup i {
+    font-size: 9.5px;
+  }
+
+  .timeline-card h3 {
+    font-size: 16px;
+  }
+
+  .timeline-card h3 span {
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .timeline-duration {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .timeline-actions {
+    margin-top: 14px;
+    justify-content: flex-start;
+  }
+
+  .timeline-link-btn {
+    font-size: 12.5px;
+    padding: 8px 16px;
+    border-radius: 16px 0 16px 0;
+  }
+
+  .timeline-link-btn::before {
+    border-radius: 16px 0 16px 0;
+  }
+}
+

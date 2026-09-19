@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="socialBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#072E60"/>
+      <stop offset="100%" stop-color="#0b3870"/>
+    </linearGradient>
+    <linearGradient id="socialTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12B9BC"/>
+      <stop offset="100%" stop-color="#6FCFD3"/>
+    </linearGradient>
+    <linearGradient id="bubbleAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6FCFD3"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#socialBg)"/>
+
+  <!-- Orbital Network Ring -->
+  <circle cx="256" cy="256" r="236" fill="none" stroke="#12B9BC" stroke-width="2.5" stroke-dasharray="6 8" opacity="0.45"/>
+  <circle cx="256" cy="256" r="218" fill="none" stroke="#6FCFD3" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- Connected User Nodes (Orbiting) -->
+  <line x1="120" y1="180" x2="210" y2="230" stroke="#12B9BC" stroke-width="2.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <line x1="390" y1="180" x2="310" y2="230" stroke="#12B9BC" stroke-width="2.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <line x1="256" y1="100" x2="256" y2="180" stroke="#6FCFD3" stroke-width="2" opacity="0.5"/>
+
+  <circle cx="110" cy="175" r="14" fill="#12B9BC"/>
+  <circle cx="400" cy="175" r="14" fill="#12B9BC"/>
+  <circle cx="256" cy="95" r="12" fill="#6FCFD3"/>
+
+  <!-- Primary Large Chat Bubble -->
+  <g filter="url(#glowFilter)">
+    <path d="M140 180 C140 135 185 105 256 105 C327 105 372 135 372 180 C372 225 327 255 256 255 C236 255 218 251 202 244 L155 265 L165 228 C149 215 140 198 140 180 Z" 
+          fill="url(#socialTeal)"/>
+  </g>
+
+  <!-- User Group Icon Inside Primary Bubble -->
+  <!-- Center User -->
+  <circle cx="256" cy="160" r="20" fill="#072E60"/>
+  <path d="M226 210 C226 192 240 182 256 182 C272 182 286 192 286 210 Z" fill="#072E60"/>
+  <!-- Left User -->
+  <circle cx="206" cy="170" r="14" fill="#072E60" opacity="0.8"/>
+  <path d="M182 208 C182 194 193 186 206 186 C214 186 220 190 224 196 C218 200 214 204 213 208 Z" fill="#072E60" opacity="0.8"/>
+  <!-- Right User -->
+  <circle cx="306" cy="170" r="14" fill="#072E60" opacity="0.8"/>
+  <path d="M330 208 C330 194 319 186 306 186 C298 186 292 190 288 196 C294 200 298 204 299 208 Z" fill="#072E60" opacity="0.8"/>
+
+  <!-- Secondary Overlapping Bubble (Messages & Reactions) -->
+  <g filter="url(#glowFilter)">
+    <path d="M240 280 C240 250 275 230 325 230 C375 230 410 250 410 280 C410 310 375 330 325 330 C310 330 298 327 286 322 L250 340 L258 312 C247 303 240 292 240 280 Z" 
+          fill="#ffffff"/>
+  </g>
+
+  <!-- Heart / Like reaction inside secondary bubble -->
+  <path d="M325 268 C320 260 310 258 302 264 C294 270 294 280 300 286 L325 306 L350 286 C356 280 356 270 348 264 C340 258 330 260 325 268 Z" 
+        fill="#12B9BC"/>
+
+  <!-- Bottom Brand Text Tag -->
+  <g transform="translate(166, 395)">
+    <rect x="0" y="0" width="180" height="42" rx="21" fill="url(#socialTeal)"/>
+    <text x="90" y="28" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="20" font-weight="800" fill="#072E60" text-anchor="middle" letter-spacing="2">SOCIALZONE</text>
+  </g>
+</svg>
