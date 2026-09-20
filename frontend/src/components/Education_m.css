@@ -49,6 +49,7 @@
     padding: 16px;
     border-radius: 30px 0 30px 0;
     z-index: 2;
+    text-align: left;
   }
 
   .connector-line {
@@ -66,6 +67,7 @@
   .education-box h3 {
     font-size: 16px;
     color: #072E60;
+    text-align: left;
   }
 
   .education-box p {

@@ -61,6 +61,18 @@ export default function Education() {
 
           <div className="education-entry left">
             <div className="education-box gradient-text-hover">
+              <h3>M.Sc. CA & IT (2025 to Present)</h3>
+              <p>
+                Currently pursuing Master of Science in Computer Application & Information Technology.
+                Advancing expertise in full-stack software architecture, scalable web systems,
+                modern frameworks, and enterprise-grade software engineering.
+              </p>
+            </div>
+            <div className="connector-line"></div>
+          </div>
+
+          <div className="education-entry right">
+            <div className="education-box gradient-text-hover">
               <h3>B.Sc. CA & IT (2022–2025)</h3>
               <p>
                 Completed Bachelor of Science in Computer Application & Information Technology
@@ -71,7 +83,7 @@ export default function Education() {
             <div className="connector-line"></div>
           </div>
 
-          <div className="education-entry right">
+          <div className="education-entry left">
             <div className="education-box gradient-text-hover">
               <h3>H.S.C. – Class 12 (2022)</h3>
               <p>
@@ -81,7 +93,7 @@ export default function Education() {
             <div className="connector-line"></div>
           </div>
 
-          <div className="education-entry left">
+          <div className="education-entry right">
             <div className="education-box gradient-text-hover">
               <h3>S.S.C. – Class 10 (2020)</h3>
               <p>
@@ -91,7 +103,7 @@ export default function Education() {
             <div className="connector-line"></div>
           </div>
 
-          <div className="education-entry right">
+          <div className="education-entry left">
             <div className="education-box gradient-text-hover">
               <h3>Certifications</h3>
               <p>
