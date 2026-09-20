@@ -4,7 +4,7 @@
   align-items: center;
   min-height: 70vh;
   padding: 100px 20px 60px 20px;
-  background-color: #ffffff;
+  background-color: var(--bg-main-light, #e6f3f4);
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }

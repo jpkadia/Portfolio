@@ -36,6 +36,7 @@ header:not(.admin-dash-navbar) {
 
 /* 1. Body & Base Typography */
 body.dark-theme {
+  --bg-main-light: #051329;
   background-color: #051329 !important;
   color: #cbd5e1 !important;
 }

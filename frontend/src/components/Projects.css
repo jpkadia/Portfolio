@@ -2,7 +2,7 @@
   --accent1: #12B9BC;
   --accent2: #6FCFD3;
   --accent3: #072E60;
-  --bg-section: #ffffff;
+  --bg-section: var(--bg-main-light, #e6f3f4);
 }
 
 /* Projects Section */

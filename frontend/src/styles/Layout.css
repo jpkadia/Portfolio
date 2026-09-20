@@ -10,6 +10,8 @@
   --content-max-width: 1240px;
   --section-padding-x: clamp(60px, 5.5vw, 92px);
   --section-padding-y: 60px;
+  /* Soft teal-tinted background for light theme */
+  --bg-main-light: #e6f3f4;
 }
 
 /* Laptop & Medium Desktop (1281px - 1439px) */

@@ -5,7 +5,7 @@
 
 .contact-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--bg-main-light, #e6f3f4);
   padding: var(--section-padding-y, 60px) 0;
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -90,6 +90,7 @@ button.send-button {
     font-size: 16px;
     outline: none;
     resize: none;
+    background-color: #ffffff;
 }
 
 textarea {

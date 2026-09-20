@@ -83,6 +83,18 @@ export default function Footer() {
               <i className="fab fa-facebook-f" aria-hidden="true"></i> parth.kadiya.612
             </a>
           </p>
+          <p>
+            <a
+              href="https://x.com/parthkadiya612"
+              className="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Parth Kadiya on X (formerly Twitter)"
+              title="Parth Kadiya on X (formerly Twitter)"
+            >
+              <i className="fa-brands fa-x-twitter" aria-hidden="true"></i> parthkadiya612
+            </a>
+          </p>
         </div>
 
         {/* Right: Profile Summary */}
