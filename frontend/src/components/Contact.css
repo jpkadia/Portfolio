@@ -145,6 +145,44 @@ button.send-button:disabled {
     opacity: 0.8;
 }
 
+button.send-button.waking-button {
+    background-color: #0d8b8d;
+}
+
+/* Server Wake Up Helper Notice */
+.server-wake-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(18, 185, 188, 0.1);
+  border: 1.5px dashed #12B9BC;
+  color: #072E60;
+  padding: 12px 16px;
+  border-radius: 16px 0 16px 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  animation: fadeInNotice 0.3s ease-in-out;
+}
+
+.server-wake-notice i {
+  color: #12B9BC;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+@keyframes fadeInNotice {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* JavaScript Form Validation Styling */
 .form-group {
     display: flex;

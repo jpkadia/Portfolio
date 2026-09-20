@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import './Contact.css';
 import './Contact_m.css';
@@ -19,6 +19,13 @@ export default function Contact() {
   const [touched, setTouched] = useState({});
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitPhase, setSubmitPhase] = useState('idle'); // 'idle' | 'sending' | 'waking'
+  const [wakeSeconds, setWakeSeconds] = useState(0);
+  const serverAwakeRef = useRef(false);
+  const hasPrewarmedRef = useRef(false);
+
+  // Hook for scroll animation and section visibility
+  const [ref, isVisible] = useScrollAnimation();
 
   // Field-level JavaScript validator
   const validateField = (fieldName, value) => {
@@ -98,6 +105,30 @@ export default function Contact() {
     if (status.message) setStatus({ type: '', message: '' });
   };
 
+  // Pre-warm server when user scrolls into the contact section or focuses on any input
+  const prewarmServer = () => {
+    if (hasPrewarmedRef.current) return;
+    hasPrewarmedRef.current = true;
+
+    const checkUrl = `${getApiBaseUrl()}/contact/health`;
+    fetch(checkUrl)
+      .then(res => {
+        if (res.ok) {
+          serverAwakeRef.current = true;
+        }
+      })
+      .catch(() => {
+        // Silently handled: Render is spinning up the container in the background
+      });
+  };
+
+  // Trigger pre-warming as soon as user scrolls to the Contact section
+  useEffect(() => {
+    if (isVisible) {
+      prewarmServer();
+    }
+  }, [isVisible]);
+
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -127,13 +158,39 @@ export default function Contact() {
 
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
+
+    // Determine initial submit phase:
+    // If server was already verified awake, start with 'sending'; else 'waking'
+    const initialPhase = serverAwakeRef.current ? 'sending' : 'waking';
+    setSubmitPhase(initialPhase);
+    setWakeSeconds(0);
+
+    // Fallback: If initialPhase was 'sending' but request takes > 2.5s, switch to 'waking'
+    let wakeTransitionTimer = null;
+    if (initialPhase === 'sending') {
+      wakeTransitionTimer = setTimeout(() => {
+        setSubmitPhase('waking');
+      }, 2500);
+    }
+
+    // Live elapsed seconds counter while submitting/waking
+    const intervalId = setInterval(() => {
+      setWakeSeconds(prev => prev + 1);
+    }, 1000);
+
     try {
       const apiUrl = `${getApiBaseUrl()}/contact`;
-      const response = await axios.post(apiUrl, {
-        name: formData.name.trim(),
-        mobile: formData.mobile.trim(),
-        message: formData.message.trim()
-      });
+      const response = await axios.post(
+        apiUrl,
+        {
+          name: formData.name.trim(),
+          mobile: formData.mobile.trim(),
+          message: formData.message.trim()
+        },
+        { timeout: 85000 } // 85s timeout allows full Render cold boot without premature drop
+      );
+
+      serverAwakeRef.current = true;
       setStatus({
         type: 'success',
         message: response.data?.message || "Message sent successfully! We will get in touch soon."
@@ -143,15 +200,21 @@ export default function Contact() {
       setErrors({});
     } catch (error) {
       let errMsg = "Error sending message. Please try again.";
-      if (!error.response) {
-        errMsg = "Backend server is not running or unreachable. Please start backend with 'npm run server'.";
+      if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
+        errMsg = "Server took too long to respond. Please try again in a few seconds.";
+      } else if (!error.response) {
+        errMsg = "Backend server is unreachable. Please try again in a moment.";
       } else if (error.response?.data?.message) {
         errMsg = error.response.data.message;
       }
       setStatus({ type: 'error', message: errMsg });
       console.error('Contact form submit error:', error);
     } finally {
+      clearTimeout(wakeTransitionTimer);
+      clearInterval(intervalId);
       setIsSubmitting(false);
+      setSubmitPhase('idle');
+      setWakeSeconds(0);
     }
   };
 
@@ -169,8 +232,6 @@ export default function Contact() {
   const [text, setText] = useState('');
   const fullText = 'GET IN TOUCH';
 
-  // Hook for scroll animation
-  const [ref, isVisible] = useScrollAnimation();
 
   useEffect(() => {
     let mounted = true;
@@ -229,6 +290,7 @@ export default function Contact() {
               required
               value={formData.name}
               onChange={handleChange}
+              onFocus={prewarmServer}
               onBlur={handleBlur}
               className={touched.name && errors.name ? 'input-error' : ''}
               aria-invalid={!!(touched.name && errors.name)}
@@ -252,6 +314,7 @@ export default function Contact() {
               maxLength="10"
               value={formData.mobile}
               onChange={handleChange}
+              onFocus={prewarmServer}
               onBlur={handleBlur}
               className={touched.mobile && errors.mobile ? 'input-error' : ''}
               aria-invalid={!!(touched.mobile && errors.mobile)}
@@ -272,6 +335,7 @@ export default function Contact() {
               required
               value={formData.message}
               onChange={handleChange}
+              onFocus={prewarmServer}
               onBlur={handleBlur}
               className={touched.message && errors.message ? 'input-error' : ''}
               aria-invalid={!!(touched.message && errors.message)}
@@ -283,6 +347,14 @@ export default function Contact() {
               </span>
             )}
           </div>
+          {isSubmitting && submitPhase === 'waking' && (
+            <div className="server-wake-notice" role="status" aria-live="polite">
+              <i className="fa-solid fa-server fa-bounce" aria-hidden="true"></i>
+              <span>
+                Server is waking up (~1 min). Your message is queued and will send automatically...
+              </span>
+            </div>
+          )}
           {status.message && (
             <div
               className={`contact-status-message status-${status.type}`}
@@ -294,11 +366,31 @@ export default function Contact() {
           )}
           <button
             type="submit"
-            className="send-button"
+            className={`send-button ${isSubmitting && submitPhase === 'waking' ? 'waking-button' : ''}`}
             disabled={isSubmitting}
-            aria-label={isSubmitting ? 'Sending message' : 'Send Message'}
+            aria-label={
+              isSubmitting
+                ? submitPhase === 'waking'
+                  ? `Waking server, please wait ${wakeSeconds} seconds`
+                  : 'Sending message'
+                : 'Send Message'
+            }
           >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
+            {isSubmitting ? (
+              submitPhase === 'waking' ? (
+                <span>
+                  <i className="fa-solid fa-hourglass-half fa-spin" aria-hidden="true" style={{ marginRight: '8px' }} />
+                  Waking server, please wait... ({wakeSeconds}s)
+                </span>
+              ) : (
+                <span>
+                  <i className="fa-solid fa-spinner fa-spin" aria-hidden="true" style={{ marginRight: '8px' }} />
+                  Sending...
+                </span>
+              )
+            ) : (
+              <span>Send Message</span>
+            )}
           </button>
         </form>
       </div>

@@ -56,6 +56,11 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use('/api/contact', contactRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Health check route for client pre-warming & cold-start detection
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'online', uptime: process.uptime() });
+});
+
 // Base Route - Minimal and safe
 app.get('/', (req, res) => {
   res.status(200).json({

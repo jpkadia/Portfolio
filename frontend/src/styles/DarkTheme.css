@@ -513,6 +513,21 @@ body.dark-theme button.send-button:hover:not(:disabled) {
   box-shadow: 0 6px 16px rgba(18, 185, 188, 0.4);
 }
 
+body.dark-theme .server-wake-notice {
+  background-color: rgba(18, 185, 188, 0.12);
+  border-color: rgba(18, 185, 188, 0.4);
+  color: #e2e8f0;
+}
+
+body.dark-theme .server-wake-notice i {
+  color: #6FCFD3;
+}
+
+body.dark-theme button.send-button.waking-button {
+  background-color: #072E60;
+  border: 1px solid #12B9BC;
+}
+
 /* Hover Swipe Glow Effect on Cards in Dark Mode */
 body.dark-theme .timeline-card::before,
 body.dark-theme .project-card::before,

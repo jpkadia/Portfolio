@@ -40,8 +40,19 @@
   }
 
   button.send-button {
-    font-size: 16px;
-    padding: 12px;
+    font-size: 15px;
+    padding: 12px 10px;
     border-radius: 16px 0 16px 0;
+  }
+
+  .server-wake-notice {
+    font-size: 13px;
+    padding: 10px 14px;
+    gap: 8px;
+    border-radius: 14px 0 14px 0;
+  }
+
+  .server-wake-notice i {
+    font-size: 16px;
   }
 }

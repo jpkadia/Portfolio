@@ -7,12 +7,14 @@ const connectDB = async () => {
       console.error('[CRITICAL] MONGO_URI environment variable is not defined.');
       process.exit(1);
     }
-    const conn = await mongoose.connect(mongoUri);
+    const conn = await mongoose.connect(mongoUri, {
+      serverSelectionTimeoutMS: 15000,
+    });
     console.log(`[MongoDB Connected] Host: ${conn.connection.host}, Database: ${conn.connection.name}`);
     return conn;
   } catch (error) {
-    console.error(`[MongoDB Connection Error]: ${error.message}`);
-    process.exit(1);
+    console.error(`[MongoDB Connection Error]: ${error.message}. Retrying in 5 seconds...`);
+    setTimeout(connectDB, 5000);
   }
 };
 
