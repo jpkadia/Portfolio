@@ -420,6 +420,27 @@ body.dark-theme .github-btn {
   border-color: #12B9BC;
 }
 
+body.dark-theme .app-download-btn {
+  background-color: #092144;
+  color: #6FCFD3;
+  border-color: #12B9BC;
+}
+
+body.dark-theme .project-links a.app-download-btn:hover,
+body.dark-theme .project-links a.app-download-btn:focus-visible {
+  color: #ffffff;
+  border-color: transparent;
+}
+
+body.dark-theme .project-links a.app-download-btn i {
+  color: #3DDC84;
+}
+
+body.dark-theme .project-links a.app-download-btn:hover i,
+body.dark-theme .project-links a.app-download-btn:focus-visible i {
+  color: #ffffff;
+}
+
 /* 9. Education Section */
 body.dark-theme .education-section {
   background-color: #051329;

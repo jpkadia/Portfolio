@@ -40,10 +40,13 @@ const ALL_PROJECTS = [
     title: "Bondera",
     category: "Cross-Platform Application",
     categoryBadge: "Cross-Platform App",
+    operatingSystem: "Android, Web, iOS",
     description:
       "Modern cross-platform mobile and web application built with Expo and React Native, featuring AI-assisted connectivity and smart messaging.",
     image: "bondera-icon.png",
     demo: "https://bondera.vercel.app",
+    appDownload:
+      "https://expo.dev/accounts/jpkadia9608s-team/projects/jp-kadiya/builds/e1d57cb9-2168-4109-8a43-22ac3dad949f",
   },
 
   // 3. Frontend Project
@@ -230,6 +233,12 @@ export default function Projects() {
                   <meta itemProp="author" content="Parth Kadiya" />
                   <meta itemProp="applicationCategory" content={project.category} />
                   <meta itemProp="url" content={project.demo} />
+                  {project.operatingSystem && (
+                    <meta itemProp="operatingSystem" content={project.operatingSystem} />
+                  )}
+                  {project.appDownload && (
+                    <meta itemProp="downloadUrl" content={project.appDownload} />
+                  )}
                   <div className="project-card-header">
                     <span className="project-card-badge">{project.categoryBadge}</span>
                   </div>
@@ -253,20 +262,36 @@ export default function Projects() {
                     <h3 itemProp="headline">{project.title}</h3>
                     <p itemProp="description">{project.description}</p>
                     <div className="project-links">
-                      <a
-                        href={project.demo}
-                        {...(project.isDownload
-                          ? { download: project.downloadName || "OrbitLanderSetup.exe" }
-                          : { target: "_blank", rel: "noopener noreferrer" })}
-                        className="live-btn"
-                        aria-label={
-                          project.isDownload
-                            ? `Download ${project.title} by Parth Kadiya`
-                            : `Open ${project.title} Live Demo by Parth Kadiya`
-                        }
-                      >
-                        <span>{project.isDownload ? "Download Game" : "Live Demo"}</span>
-                      </a>
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          {...(project.isDownload
+                            ? { download: project.downloadName || "OrbitLanderSetup.exe" }
+                            : { target: "_blank", rel: "noopener noreferrer" })}
+                          className="live-btn"
+                          aria-label={
+                            project.isDownload
+                              ? `Download ${project.title} by Parth Kadiya`
+                              : `Open ${project.title} Live Demo by Parth Kadiya`
+                          }
+                        >
+                          <span>{project.isDownload ? "Download Game" : "Live Demo"}</span>
+                        </a>
+                      )}
+                      {project.appDownload && (
+                        <a
+                          href={project.appDownload}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="app-download-btn"
+                          aria-label={`Download ${project.title} Android App build by Parth Kadiya`}
+                        >
+                          <span>
+                            <i className="fa-brands fa-android" aria-hidden="true" style={{ marginRight: "6px" }} />
+                            Download App
+                          </span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </article>

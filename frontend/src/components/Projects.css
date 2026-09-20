@@ -474,6 +474,36 @@
   box-shadow: none;
 }
 
+/* App Download Button styles */
+.app-download-btn {
+  color: var(--accent1);
+  border: 2px solid var(--accent1);
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+/* App Download overlay gradient (slides on hover) */
+.app-download-btn::before {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent1));
+}
+
+.project-links a.app-download-btn:hover,
+.project-links a.app-download-btn:focus-visible {
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 8px rgba(18, 185, 188, 0.35);
+}
+
+.project-links a.app-download-btn i {
+  color: #3DDC84;
+  transition: color 0.28s ease;
+}
+
+.project-links a.app-download-btn:hover i,
+.project-links a.app-download-btn:focus-visible i {
+  color: #ffffff;
+}
+
 .project-links a:focus-visible {
   outline: 3px solid rgba(18, 185, 188, 0.2);
   outline-offset: 2px;
