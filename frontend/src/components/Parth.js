@@ -55,10 +55,10 @@ export default function Parth() {
           src={imgSrc}
           alt="Parth Kadiya - Frontend Developer &amp; Web Developer Portfolio"
           className="parth-image"
-          width="8166"
-          height="6044"
+          width="1920"
+          height="1421"
           fetchPriority="high"
-          decoding="async"
+          decoding="sync"
         />
       </picture>
       <div className="parth-content">
