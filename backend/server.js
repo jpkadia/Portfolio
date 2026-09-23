@@ -11,6 +11,7 @@ dotenv.config(); // Also check root .env
 const connectDB = require('./config/db');
 const contactRoutes = require('./routes/contactRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const settingRoutes = require('./routes/settingRoutes');
 
 const app = express();
 
@@ -44,7 +45,7 @@ app.use(cors({
     return callback(new Error('Blocked by CORS'));
   },
   credentials: true,
-  methods: ['GET', 'POST', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
@@ -55,6 +56,7 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 // Application Routes
 app.use('/api/contact', contactRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/settings', settingRoutes);
 
 // Health check route for client pre-warming & cold-start detection
 app.get('/api/health', (req, res) => {

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { getApiBaseUrl } from '../utils/api';
 import './Experience.css';
 import './Experience_m.css';
 
@@ -10,6 +12,39 @@ export default function Experience() {
   const fullText = 'EXPERIENCE';
 
   const [ref, isVisible] = useScrollAnimation();
+
+  // Load initial visibility from cache for instant render, default to true
+  const [showCoFounder, setShowCoFounder] = useState(() => {
+    try {
+      const cached = localStorage.getItem('cfg_show_cofounder');
+      return cached !== null ? cached === 'true' : true;
+    } catch (e) {
+      return true;
+    }
+  });
+
+  useEffect(() => {
+    let isMounted = true;
+    const fetchSettings = async () => {
+      try {
+        const res = await axios.get(`${getApiBaseUrl()}/settings/public`, { timeout: 4000 });
+        if (isMounted && res.data?.success && typeof res.data.settings?.showCoFounderExperience === 'boolean') {
+          const val = res.data.settings.showCoFounderExperience;
+          setShowCoFounder(val);
+          try {
+            localStorage.setItem('cfg_show_cofounder', String(val));
+          } catch (e) {}
+        }
+      } catch (err) {
+        // Silently use cached/default value - zero disruption to public visitors
+      }
+    };
+
+    fetchSettings();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   useEffect(() => {
     let mounted = true;
@@ -45,8 +80,10 @@ export default function Experience() {
     };
   }, []);
 
-  const experiences = [
+  const allExperiences = [
     {
+      id: 'techie-growera',
+      isCoFounder: true,
       role: 'Co-Founder & Lead Developer',
       company: 'Techie Growera',
       duration: 'September 2026 to Present',
@@ -57,6 +94,8 @@ export default function Experience() {
       linkText: 'Visit Techie Growera'
     },
     {
+      id: 'swarnimtouch',
+      isCoFounder: false,
       role: 'Web Developer',
       company: 'SwarnimTouch Solutions',
       duration: 'September 2024 to Present',
@@ -65,6 +104,8 @@ export default function Experience() {
         'Developing and maintaining responsive, high-performance web applications using React.js, JavaScript, HTML5, CSS3, Tailwind CSS, and Bootstrap, along with backend development using Node.js and Express.js. Implementing modern frontend architectures, RESTful API integrations, server-side development, cross-browser compatibility, and code optimization to deliver scalable and user-centric full-stack web solutions.'
     }
   ];
+
+  const experiences = allExperiences.filter(exp => !exp.isCoFounder || showCoFounder);
 
   return (
     <section
@@ -78,7 +119,7 @@ export default function Experience() {
         <h2 className="experience-title">My Journey Through Learning & Contribution</h2>
         <div className="experience-timeline">
           {experiences.map((exp, index) => (
-            <div className="timeline-item" key={index}>
+            <div className="timeline-item" key={exp.id || index}>
               <div className="timeline-dot"></div>
               <div className="timeline-card gradient-text-hover">
                 <div className="timeline-card-header">

@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const rateLimit = require('express-rate-limit');
 const authMiddleware = require('../middleware/auth');
 const Contact = require('../models/Contact');
+const Setting = require('../models/Setting');
 
 // Rate limiting for admin login: max 5 requests per 15 minutes per IP
 const loginLimiter = rateLimit({
@@ -140,6 +141,65 @@ router.get('/submissions', authMiddleware, submissionsLimiter, async (req, res) 
     return res.status(500).json({
       success: false,
       message: 'An error occurred while retrieving contact submissions.'
+    });
+  }
+});
+
+// @route   GET /api/admin/settings
+// @desc    Retrieve all configurable admin settings
+// @access  Private (Admin auth required)
+router.get('/settings', authMiddleware, submissionsLimiter, async (req, res) => {
+  try {
+    const settingDoc = await Setting.findOne({ key: 'showCoFounderExperience' }).lean();
+    const showCoFounderExperience = settingDoc !== null ? Boolean(settingDoc.value) : true;
+
+    return res.status(200).json({
+      success: true,
+      settings: {
+        showCoFounderExperience
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching admin settings:', error.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to retrieve admin settings.'
+    });
+  }
+});
+
+// @route   PUT /api/admin/settings
+// @desc    Update configurable admin settings
+// @access  Private (Admin auth required)
+router.put('/settings', authMiddleware, submissionsLimiter, async (req, res) => {
+  try {
+    const { showCoFounderExperience } = req.body;
+
+    if (typeof showCoFounderExperience !== 'boolean') {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid payload: showCoFounderExperience must be a boolean (true or false).'
+      });
+    }
+
+    const updated = await Setting.findOneAndUpdate(
+      { key: 'showCoFounderExperience' },
+      { value: showCoFounderExperience },
+      { upsert: true, new: true, setDefaultsOnInsert: true }
+    );
+
+    return res.status(200).json({
+      success: true,
+      message: `Co-Founder experience visibility set to ${showCoFounderExperience ? 'ON (Visible)' : 'OFF (Hidden)'}.`,
+      settings: {
+        showCoFounderExperience: Boolean(updated.value)
+      }
+    });
+  } catch (error) {
+    console.error('Error updating admin settings:', error.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to update admin settings.'
     });
   }
 });

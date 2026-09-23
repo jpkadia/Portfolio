@@ -10,6 +10,9 @@ export default function AdminDashboard() {
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+  const [showCoFounder, setShowCoFounder] = useState(true);
+  const [isUpdatingSetting, setIsUpdatingSetting] = useState(false);
+  const [settingFeedback, setSettingFeedback] = useState({ type: '', text: '' });
   const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
@@ -17,6 +20,22 @@ export default function AdminDashboard() {
     sessionStorage.removeItem('admin_token');
     navigate('/admin/login', { replace: true });
   }, [navigate]);
+
+  const fetchSettings = useCallback(async () => {
+    const token = sessionStorage.getItem('admin_token');
+    if (!token) return;
+
+    try {
+      const response = await axios.get(`${getApiBaseUrl()}/admin/settings`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (response.data?.success && typeof response.data.settings?.showCoFounderExperience === 'boolean') {
+        setShowCoFounder(response.data.settings.showCoFounderExperience);
+      }
+    } catch (err) {
+      console.error('Error fetching admin settings:', err);
+    }
+  }, []);
 
   const fetchSubmissions = useCallback(async () => {
     const token = sessionStorage.getItem('admin_token');
@@ -56,7 +75,69 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     fetchSubmissions();
-  }, [fetchSubmissions]);
+    fetchSettings();
+  }, [fetchSubmissions, fetchSettings]);
+
+  useEffect(() => {
+    if (settingFeedback.text) {
+      const timer = setTimeout(() => {
+        setSettingFeedback({ type: '', text: '' });
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [settingFeedback]);
+
+  const handleToggleCoFounder = async () => {
+    const token = sessionStorage.getItem('admin_token');
+    if (!token) {
+      handleLogout();
+      return;
+    }
+
+    const nextVal = !showCoFounder;
+    setIsUpdatingSetting(true);
+    setSettingFeedback({ type: '', text: '' });
+
+    try {
+      const response = await axios.put(
+        `${getApiBaseUrl()}/admin/settings`,
+        { showCoFounderExperience: nextVal },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      if (response.data?.success) {
+        setShowCoFounder(nextVal);
+        try {
+          localStorage.setItem('cfg_show_cofounder', String(nextVal));
+        } catch (e) {}
+
+        setSettingFeedback({
+          type: 'success',
+          text: `Saved! Co-Founder experience is now ${nextVal ? 'ON (Visible on portfolio)' : 'OFF (Hidden from portfolio)'}.`
+        });
+      } else {
+        setSettingFeedback({
+          type: 'error',
+          text: 'Failed to update setting. Please try again.'
+        });
+      }
+    } catch (err) {
+      if (err.response?.status === 401 || err.response?.status === 403) {
+        handleLogout();
+        return;
+      }
+      setSettingFeedback({
+        type: 'error',
+        text: err.response?.data?.message || 'Failed to update setting. Check server connection.'
+      });
+    } finally {
+      setIsUpdatingSetting(false);
+    }
+  };
 
   const formatDateTime = (dateString) => {
     if (!dateString) return 'N/A';
@@ -127,6 +208,65 @@ export default function AdminDashboard() {
               {errorMessage}
             </div>
           )}
+
+          {/* Portfolio Experience Display Controls Card */}
+          <div className="admin-controls-card">
+            <div className="admin-controls-header">
+              <div className="admin-controls-title-group">
+                <i className="fa-solid fa-sliders admin-controls-icon" aria-hidden="true"></i>
+                <div>
+                  <h2 className="admin-controls-title">Portfolio Display Controls</h2>
+                  <p className="admin-controls-subtitle">
+                    Manage the live visibility of startup and co-founder experience on your portfolio
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {settingFeedback.text && (
+              <div className={`admin-setting-feedback ${settingFeedback.type}`} role="status">
+                <i
+                  className={`fa-solid ${
+                    settingFeedback.type === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation'
+                  }`}
+                  aria-hidden="true"
+                ></i>
+                <span>{settingFeedback.text}</span>
+              </div>
+            )}
+
+            <div className="admin-toggle-row">
+              <div className="admin-toggle-info">
+                <div className="admin-toggle-heading">
+                  <span className="admin-toggle-label">Co-Founder &amp; Lead Developer (Techie Growera)</span>
+                  <span className={`admin-status-pill ${showCoFounder ? 'status-active' : 'status-hidden'}`}>
+                    <span className="status-dot"></span>
+                    {showCoFounder ? 'Visible on Site' : 'Hidden from Site'}
+                  </span>
+                </div>
+                <p className="admin-toggle-desc">
+                  {showCoFounder
+                    ? 'Currently visible on your live portfolio. Toggle OFF if you want to apply for full-time jobs without showing your startup role.'
+                    : 'Currently hidden from your live portfolio. Public visitors will only see your full-time developer experience.'}
+                </p>
+              </div>
+
+              <div className="admin-toggle-action">
+                <label className="admin-switch" title={`Click to turn ${showCoFounder ? 'OFF' : 'ON'}`}>
+                  <input
+                    type="checkbox"
+                    checked={showCoFounder}
+                    disabled={isUpdatingSetting}
+                    onChange={handleToggleCoFounder}
+                    aria-label="Toggle Co-Founder Experience Visibility"
+                  />
+                  <span className={`admin-slider ${isUpdatingSetting ? 'updating' : ''}`}>
+                    {isUpdatingSetting && <i className="fa-solid fa-circle-notch fa-spin toggle-spinner"></i>}
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
 
           {/* Submissions List Table */}
           <div className="admin-table-card">
