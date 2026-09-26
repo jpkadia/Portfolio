@@ -172,11 +172,14 @@ export default function Projects() {
   }, [activeCategory]);
 
   return (
-    <section className="projects-section" id="projects" aria-labelledby="projects-title">
+    <section
+      className={`projects-section scroll-animate ${isVisible ? "visible" : ""}`}
+      id="projects"
+      ref={ref}
+      aria-labelledby="projects-title"
+    >
       <div className="projects-container section-container">
-        {/* attach ref to subtitle only — doesn't hide whole section */}
         <p
-          ref={ref}
           className={`projects-subtitle typing-text ${isVisible ? "subtitle-visible" : ""}`}
           aria-hidden={false}
           aria-label="PROJECTS"
@@ -184,12 +187,12 @@ export default function Projects() {
           {text}
         </p>
 
-        <h2 className="projects-title" id="projects-title">
+        <h2 className="projects-title scroll-reveal" id="projects-title">
           What I've Built
         </h2>
 
         {/* Category Filter Tabs */}
-        <div className="project-category-tabs" role="tablist" aria-label="Project Categories">
+        <div className="project-category-tabs scroll-reveal delay-1" role="tablist" aria-label="Project Categories">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -205,7 +208,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Carousel */}
-        <div className="projects-carousel-wrapper">
+        <div className="projects-carousel-wrapper scroll-reveal delay-2">
           <CardCarousel
             category={activeCategory}
             items={filteredProjects}

@@ -10,12 +10,6 @@
     text-align: center;          /* Center alignment */
   }
 
-  /* Guarantee section visibility on mobile without waiting for deep scroll threshold */
-  .about.scroll-animate {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-  }
 
   .about-image {
     max-width: 320px;            /* Fits cleanly on mobile and tablet */

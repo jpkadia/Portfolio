@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="footer-container">
 
         {/* Left: Contact Information */}
-        <div className="footer-column">
+        <div className="footer-column scroll-reveal">
           <h3>Contact Information</h3>
           <p>
             <a href="tel:+919081818478" className="footer-link" aria-label="Call Parth Kadiya">
@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
 
         {/* Center: Follow Me */}
-        <div className="footer-column">
+        <div className="footer-column scroll-reveal delay-1">
           <h3>Follow Me</h3>
           <p>
             <a
@@ -98,7 +98,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Profile Summary */}
-        <div className="footer-column">
+        <div className="footer-column scroll-reveal delay-2">
           <h3>Parth Kadiya</h3>
           <p>
             Creative Web Developer based in Ahmedabad, passionate about crafting responsive, scalable, and high-performance web applications using React, Next.js, and modern web technologies.

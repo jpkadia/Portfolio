@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parth Kadiya | Web Developer | Portfolio</title>
 
+    <!-- Prevent Dark Mode White Flash / Blink on Refresh (Anti-FOUC) -->
+    <script>
+      (function() {
+        try {
+          var t = sessionStorage.getItem('portfolio-theme');
+          if (t === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.add('dark-theme');
+            document.documentElement.style.backgroundColor = '#051329';
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Primary Meta Tags -->
     <meta name="title" content="Parth Kadiya | Web Developer | Portfolio" />
     <meta

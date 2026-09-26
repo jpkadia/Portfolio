@@ -21,8 +21,10 @@ import AdminProtectedRoute from './components/AdminProtectedRoute';
 import { ThemeProvider } from './context/ThemeContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import useVisitorTracker from './hooks/useVisitorTracker';
+import useScrollReveal from './hooks/useScrollReveal';
 import './styles/Layout.css';
 import './styles/DarkTheme.css';
+import './styles/ScrollAnimation.css';
 
 function App() {
   const location = useLocation();
@@ -30,6 +32,9 @@ function App() {
 
   // Track visitor and section engagement
   useVisitorTracker(isAdminRoute);
+
+  // Universal card & component level scroll reveal animation (public site only)
+  useScrollReveal(isAdminRoute ? null : location.pathname);
 
   // Prevent automatic scroll jump on page refresh
   useEffect(() => {

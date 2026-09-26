@@ -204,11 +204,11 @@ export default function Skills() {
     >
       <div className="skills-container section-container">
         <p className="skills-subtitle typing-text" aria-label="EXPERTISE">{text}</p>
-        <h2 className="skills-title">Driven by Logic, Built with Modern Technologies.</h2>
+        <h2 className="skills-title scroll-reveal">Driven by Logic, Built with Modern Technologies.</h2>
 
         <div className="skills-categories-grid">
-          {skillCategories.map(({ category, iconClass, badge, description, skills }) => (
-            <div className="skill-category-card" key={category}>
+          {skillCategories.map(({ category, iconClass, badge, description, skills }, index) => (
+            <div className={`skill-category-card scroll-reveal delay-${index + 1}`} key={category}>
               <div className="skill-card-top">
                 <div className="skill-category-icon-wrapper" aria-hidden="true">
                   <i className={iconClass}></i>

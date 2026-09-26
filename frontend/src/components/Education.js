@@ -54,12 +54,12 @@ export default function Education() {
     >
       <div className="education-main-container section-container">
         <p className="education-subtitle typing-text">{text}</p>
-        <h2 className="education-title">Shaped by knowledge. Driven by innovation.</h2>
+        <h2 className="education-title scroll-reveal">Shaped by knowledge. Driven by innovation.</h2>
 
         <div className="education-container">
           <div className="timeline"></div>
 
-          <div className="education-entry left">
+          <div className="education-entry left scroll-reveal">
             <div className="education-box gradient-text-hover">
               <h3>M.Sc. CA & IT (2025 to Present)</h3>
               <p>
@@ -71,7 +71,7 @@ export default function Education() {
             <div className="connector-line"></div>
           </div>
 
-          <div className="education-entry right">
+          <div className="education-entry right scroll-reveal">
             <div className="education-box gradient-text-hover">
               <h3>B.Sc. CA & IT (2022–2025)</h3>
               <p>
@@ -83,7 +83,7 @@ export default function Education() {
             <div className="connector-line"></div>
           </div>
 
-          <div className="education-entry left">
+          <div className="education-entry left scroll-reveal">
             <div className="education-box gradient-text-hover">
               <h3>H.S.C. – Class 12 (2022)</h3>
               <p>
@@ -93,7 +93,7 @@ export default function Education() {
             <div className="connector-line"></div>
           </div>
 
-          <div className="education-entry right">
+          <div className="education-entry right scroll-reveal">
             <div className="education-box gradient-text-hover">
               <h3>S.S.C. – Class 10 (2020)</h3>
               <p>
@@ -103,7 +103,7 @@ export default function Education() {
             <div className="connector-line"></div>
           </div>
 
-          <div className="education-entry left">
+          <div className="education-entry left scroll-reveal">
             <div className="education-box gradient-text-hover">
               <h3>Certifications</h3>
               <p>

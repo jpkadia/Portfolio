@@ -59,7 +59,7 @@ export default function AboutMe() {
       ref={ref} // 🆕 Attach observer reference
     >
       <div className="about-container section-container">
-        <div className="about-image">
+        <div className="about-image scroll-reveal">
           <picture style={{ display: 'contents' }}>
             <source srcSet={`${process.env.PUBLIC_URL}/assets/parthkadiya.webp`} type="image/webp" />
             <img
@@ -73,7 +73,7 @@ export default function AboutMe() {
             />
           </picture>
         </div>
-        <div className="about-content">
+        <div className="about-content scroll-reveal delay-1">
           <h2 className="about-heading typing-text" aria-label="ABOUT ME">{text}</h2>
           <p>
             I'm Parth Kadiya, a passionate Web Developer based in Ahmedabad. I specialize in building responsive, scalable, and high-performance web applications using modern technologies like React.js, Next.js, JavaScript, Tailwind CSS, Bootstrap, HTML5, and CSS3.

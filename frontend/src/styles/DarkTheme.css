@@ -35,8 +35,12 @@ header:not(.admin-dash-navbar) {
 }
 
 /* 1. Body & Base Typography */
+html[data-theme="dark"],
+html.dark-theme,
+html[data-theme="dark"] body,
+html.dark-theme body,
 body.dark-theme {
-  --bg-main-light: #051329;
+  --bg-main-light: #051329 !important;
   background-color: #051329 !important;
   color: #cbd5e1 !important;
 }

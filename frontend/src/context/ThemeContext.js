@@ -26,13 +26,21 @@ export function ThemeProvider({ children }) {
     const body = document.body;
 
     if (theme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      root.classList.add('dark-theme');
+      root.classList.remove('light-theme');
+      root.style.backgroundColor = '#051329';
       body.classList.add('dark-theme');
       body.classList.remove('light-theme');
-      root.setAttribute('data-theme', 'dark');
+      body.style.backgroundColor = '#051329';
     } else {
+      root.setAttribute('data-theme', 'light');
+      root.classList.add('light-theme');
+      root.classList.remove('dark-theme');
+      root.style.backgroundColor = '#e6f3f4';
       body.classList.add('light-theme');
       body.classList.remove('dark-theme');
-      root.setAttribute('data-theme', 'light');
+      body.style.backgroundColor = '#e6f3f4';
     }
 
     try {

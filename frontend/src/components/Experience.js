@@ -116,10 +116,10 @@ export default function Experience() {
     >
       <div className="experience-container section-container">
         <p className="experience-subtitle typing-text" aria-label="EXPERIENCE">{text}</p>
-        <h2 className="experience-title">My Journey Through Learning & Contribution</h2>
+        <h2 className="experience-title scroll-reveal">My Journey Through Learning & Contribution</h2>
         <div className="experience-timeline">
           {experiences.map((exp, index) => (
-            <div className="timeline-item" key={exp.id || index}>
+            <div className="timeline-item scroll-reveal" key={exp.id || index}>
               <div className="timeline-dot"></div>
               <div className="timeline-card gradient-text-hover">
                 <div className="timeline-card-header">

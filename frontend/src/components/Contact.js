@@ -276,9 +276,9 @@ export default function Contact() {
     >
       <div className="contact-container section-container">
         <p className="contact-subtitle typing-text" aria-label="GET IN TOUCH">{text}</p>
-        <h2 className="contact-title">Have a Project or Technical Query? Let’s Connect and Create!</h2>
+        <h2 className="contact-title scroll-reveal">Have a Project or Technical Query? Let’s Connect and Create!</h2>
 
-        <form onSubmit={handleSubmit} className="contact-form" aria-label="Contact form" noValidate>
+        <form onSubmit={handleSubmit} className="contact-form scroll-reveal delay-1" aria-label="Contact form" noValidate>
           <div className="form-group">
             <input
               id="contact-name"

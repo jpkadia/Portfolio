@@ -1,11 +1,67 @@
+/* =========================================================
+   SILKY SMOOTH SCROLL REVEAL (INDIVIDUAL CARD/BOX LEVEL)
+   - Apple / Vercel style subtle slide-up
+   - Animates exactly when the specific card/box enters the viewport
+   - GPU hardware-accelerated with translate3d & opacity only
+   - 0 layout reflows (60-120 FPS on all devices)
+   - Zero effect on Admin Panel
+   ========================================================= */
+
+/* 0. Section Container Safety */
 .scroll-animate {
+  opacity: 1;
+}
+
+/* 1. Base Scroll Reveal State */
+.scroll-reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
+  transform: translate3d(0, 32px, 0);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.scroll-animate.visible {
+/* 2. Active Revealed State */
+.scroll-reveal.is-revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* 3. Stagger Delays for Grid Siblings (e.g. Skill Cards, Timeline items) */
+.scroll-reveal.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-reveal.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-reveal.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-reveal.delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* 4. Mobile Responsiveness (≤ 768px):
+   Slightly shorter slide distance (20px) so it moves naturally with thumb scroll */
+@media (max-width: 768px) {
+  .scroll-reveal {
+    transform: translate3d(0, 20px, 0);
+    transition-duration: 0.55s;
+  }
+
+  .scroll-reveal.delay-1 { transition-delay: 0.06s; }
+  .scroll-reveal.delay-2 { transition-delay: 0.14s; }
+  .scroll-reveal.delay-3 { transition-delay: 0.22s; }
+  .scroll-reveal.delay-4 { transition-delay: 0.3s; }
+}
+
+/* 5. Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
