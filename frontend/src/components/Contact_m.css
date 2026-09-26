@@ -27,19 +27,19 @@
     gap: 16px;
   }
 
-  input[type="text"],
-  input[type="tel"],
-  textarea {
+  .contact-form input[type="text"],
+  .contact-form input[type="tel"],
+  .contact-form textarea {
     padding: 12px;
     font-size: 14px;
     border-radius: 16px 0 16px 0;
   }
 
-  textarea {
+  .contact-form textarea {
     height: 100px;
   }
 
-  button.send-button {
+  .contact-form button.send-button {
     font-size: 15px;
     padding: 12px 10px;
     border-radius: 16px 0 16px 0;

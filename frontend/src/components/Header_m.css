@@ -21,8 +21,8 @@
     z-index: 1001 !important;
   }
 
-  /* 2. Add bottom padding so content doesn't overlap bottom-nav */
-  body {
+  /* 2. Add bottom padding so content doesn't overlap bottom-nav (only on public site) */
+  body:not(.admin-body):not(:has(.admin-dash-wrapper)) {
     padding-bottom: 60px !important;
     overflow-x: hidden !important;
   }

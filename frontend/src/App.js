@@ -20,12 +20,16 @@ import AdminProtectedRoute from './components/AdminProtectedRoute';
 
 import { ThemeProvider } from './context/ThemeContext';
 import ErrorBoundary from './components/ErrorBoundary';
+import useVisitorTracker from './hooks/useVisitorTracker';
 import './styles/Layout.css';
 import './styles/DarkTheme.css';
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
+
+  // Track visitor and section engagement
+  useVisitorTracker(isAdminRoute);
 
   // Prevent automatic scroll jump on page refresh
   useEffect(() => {
@@ -47,7 +51,7 @@ function App() {
   return (
     <ThemeProvider>
       {!isAdminRoute && <Header />}
-      <main>
+      <main className={isAdminRoute ? 'admin-main-container' : ''}>
         <ErrorBoundary>
           <Routes>
             {/* Home page: your existing sections */}

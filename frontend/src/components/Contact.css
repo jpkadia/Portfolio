@@ -78,10 +78,10 @@ textarea::placeholder {
     width: 100%;
 }
 
-input[type="text"],
-input[type="tel"],
-textarea,
-button.send-button {
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form textarea,
+.contact-form button.send-button {
     font-family: 'Poppins', sans-serif;
     width: 100%;
     padding: 15px;
@@ -93,12 +93,12 @@ button.send-button {
     background-color: #ffffff;
 }
 
-textarea {
+.contact-form textarea {
     height: 120px;
 }
 
-input:focus,
-textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     border-color: #12B9BC;
     box-shadow: 0 0 0 3px rgba(18, 185, 188, 0.15);
 }

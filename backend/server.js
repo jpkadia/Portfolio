@@ -12,6 +12,7 @@ const connectDB = require('./config/db');
 const contactRoutes = require('./routes/contactRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const settingRoutes = require('./routes/settingRoutes');
+const analyticsRoutes = require('./routes/analyticsRoutes');
 
 const app = express();
 
@@ -45,7 +46,7 @@ app.use(cors({
     return callback(new Error('Blocked by CORS'));
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
@@ -57,6 +58,7 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use('/api/contact', contactRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/settings', settingRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 // Health check route for client pre-warming & cold-start detection
 app.get('/api/health', (req, res) => {

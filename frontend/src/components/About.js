@@ -49,7 +49,7 @@ export default function AboutMe() {
     };
   }, []);
 
-  const rawPath = `${process.env.PUBLIC_URL}/assets/parth-kadiya-about.jpg`;
+  const rawPath = `${process.env.PUBLIC_URL}/assets/parthkadiya.jpg`;
   const imgSrc = encodeURI(rawPath);
 
   return (
@@ -61,7 +61,7 @@ export default function AboutMe() {
       <div className="about-container section-container">
         <div className="about-image">
           <picture style={{ display: 'contents' }}>
-            <source srcSet={`${process.env.PUBLIC_URL}/assets/parth-kadiya-about.webp`} type="image/webp" />
+            <source srcSet={`${process.env.PUBLIC_URL}/assets/parthkadiya.webp`} type="image/webp" />
             <img
               src={imgSrc}
               alt="About Parth Kadiya - Web Developer Portfolio"

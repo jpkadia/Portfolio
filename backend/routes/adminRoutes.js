@@ -145,6 +145,34 @@ router.get('/submissions', authMiddleware, submissionsLimiter, async (req, res) 
   }
 });
 
+// @route   DELETE /api/admin/submissions/:id
+// @desc    Delete a contact submission by ID from database
+// @access  Private (Admin auth required)
+router.delete('/submissions/:id', authMiddleware, submissionsLimiter, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Contact.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({
+        success: false,
+        message: 'Submission not found or already deleted.'
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: 'Contact submission deleted successfully.',
+      id
+    });
+  } catch (error) {
+    console.error('Error deleting submission:', error.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to delete contact submission.'
+    });
+  }
+});
+
 // @route   GET /api/admin/settings
 // @desc    Retrieve all configurable admin settings
 // @access  Private (Admin auth required)

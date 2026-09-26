@@ -478,23 +478,23 @@ body.dark-theme .contact-title {
   color: #ffffff;
 }
 
-body.dark-theme input[type="text"],
-body.dark-theme input[type="tel"],
-body.dark-theme textarea {
+body.dark-theme .contact-form input[type="text"],
+body.dark-theme .contact-form input[type="tel"],
+body.dark-theme .contact-form textarea {
   background-color: #071a36 !important;
   color: #ffffff !important;
   border: 2px solid #14355f !important;
 }
 
-body.dark-theme input[type="text"]::placeholder,
-body.dark-theme input[type="tel"]::placeholder,
-body.dark-theme textarea::placeholder {
+body.dark-theme .contact-form input[type="text"]::placeholder,
+body.dark-theme .contact-form input[type="tel"]::placeholder,
+body.dark-theme .contact-form textarea::placeholder {
   color: #64748b !important;
 }
 
-body.dark-theme input[type="text"]:focus,
-body.dark-theme input[type="tel"]:focus,
-body.dark-theme textarea:focus {
+body.dark-theme .contact-form input[type="text"]:focus,
+body.dark-theme .contact-form input[type="tel"]:focus,
+body.dark-theme .contact-form textarea:focus {
   border-color: #12B9BC !important;
   box-shadow: 0 0 0 3px rgba(18, 185, 188, 0.25) !important;
 }
