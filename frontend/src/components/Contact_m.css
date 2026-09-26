@@ -43,6 +43,11 @@
     font-size: 15px;
     padding: 12px 10px;
     border-radius: 16px 0 16px 0;
+    color: #FFFFFF !important;
+  }
+
+  .contact-form button.send-button span {
+    color: #FFFFFF !important;
   }
 
   .server-wake-notice {

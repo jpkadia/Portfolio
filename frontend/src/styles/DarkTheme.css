@@ -513,9 +513,35 @@ body.dark-theme .field-error-text {
   color: #fca5a5 !important;
 }
 
+body.dark-theme .contact-form button.send-button,
+body.dark-theme button.send-button {
+  background-color: #12B9BC !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+body.dark-theme .contact-form button.send-button span,
+body.dark-theme button.send-button span {
+  color: #FFFFFF !important;
+  font-weight: 700;
+}
+
+body.dark-theme .contact-form button.send-button:hover:not(:disabled),
 body.dark-theme button.send-button:hover:not(:disabled) {
-  background-color: #0a3a78;
+  background-color: #0a3a78 !important;
+  color: #FFFFFF !important;
   box-shadow: 0 6px 16px rgba(18, 185, 188, 0.4);
+}
+
+body.dark-theme .contact-form button.send-button:hover:not(:disabled) span,
+body.dark-theme button.send-button:hover:not(:disabled) span {
+  color: #FFFFFF !important;
+}
+
+body.dark-theme .contact-form button.send-button:disabled,
+body.dark-theme button.send-button:disabled {
+  background-color: rgba(18, 185, 188, 0.5) !important;
+  color: #FFFFFF !important;
 }
 
 body.dark-theme .server-wake-notice {
@@ -528,9 +554,16 @@ body.dark-theme .server-wake-notice i {
   color: #6FCFD3;
 }
 
+body.dark-theme .contact-form button.send-button.waking-button,
 body.dark-theme button.send-button.waking-button {
-  background-color: #072E60;
-  border: 1px solid #12B9BC;
+  background-color: #072E60 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #12B9BC !important;
+}
+
+body.dark-theme .contact-form button.send-button.waking-button span,
+body.dark-theme button.send-button.waking-button span {
+  color: #FFFFFF !important;
 }
 
 /* Hover Swipe Glow Effect on Cards in Dark Mode */
