@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
 const DEFAULT_TITLE = 'Parth Kadiya | Web Developer | Portfolio';
-const DEFAULT_DESCRIPTION = 'Official portfolio of Parth Kadiya (ParthKadiya) - Web Developer & Frontend Developer based in Ahmedabad. Explore web development projects, technical skills, and software applications by Parth Kadiya.';
-const DEFAULT_KEYWORDS = 'Parth Kadiya, Parth Kadiya Developer, Parth Kadiya Portfolio, Parth Web Developer, Parth Kadiya Web Developer, Parth Portfolio, ParthKadiya, parth kadiya, parthkadiya, Frontend Developer Ahmedabad, Web Developer Ahmedabad, React Developer, Full Stack Developer, JavaScript Developer, Next.js, Portfolio';
+const DEFAULT_DESCRIPTION = 'Official portfolio of Parth Kadiya (ParthKadiya) - Web Developer & Co-Founder at Techie Growera (TechieGrowera) based in Ahmedabad. Explore web development projects, technical skills, and software applications by Parth Kadiya.';
+const DEFAULT_KEYWORDS = 'Parth Kadiya, Parth Kadiya Developer, Parth Kadiya Portfolio, Parth Web Developer, Parth Kadiya Web Developer, Parth Portfolio, ParthKadiya, parth kadiya, parthkadiya, Techie Growera Parth, TechieGrowera Parth, Parth Techie Growera, Parth Kadiya Techie Growera, Techie Growera Co-Founder, Frontend Developer Ahmedabad, Web Developer Ahmedabad, React Developer, Full Stack Developer, JavaScript Developer, Next.js, Portfolio';
 const DEFAULT_CANONICAL = 'https://parthkadiya.me/';
 const DEFAULT_IMAGE = 'https://parthkadiya.me/assets/parthkadiya.jpg';
 
