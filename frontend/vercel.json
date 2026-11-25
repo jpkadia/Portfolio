@@ -28,6 +28,24 @@
       ]
     },
     {
+      "source": "/(favicon.*|logo192\\.png|logo512\\.png|apple-touch-icon\\.png)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(bondera-icon|diwali_video_maker|doctor_gen_ai|doctor_one|lathrix|logo|MongoDB|mysql|orbit_lander|patient_testimonials|Postman|render|rest-api|socialzone)\\.(png|webp|svg)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
       "source": "/(index\\.html|sitemap\\.xml|robots\\.txt)",
       "headers": [
         {
