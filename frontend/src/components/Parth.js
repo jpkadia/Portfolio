@@ -53,7 +53,8 @@ export default function Parth() {
         <source srcSet={`${process.env.PUBLIC_URL}/assets/parth.webp`} type="image/webp" />
         <img
           src={imgSrc}
-          alt="Parth Kadiya - Frontend Developer &amp; Web Developer Portfolio"
+          alt="Parth Kadiya (ParthKadiya) - Frontend Developer &amp; Web Developer Portfolio"
+          title="Parth Kadiya - Web Developer"
           className="parth-image"
           width="1920"
           height="1421"

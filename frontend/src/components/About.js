@@ -64,12 +64,23 @@ export default function AboutMe() {
             <source srcSet={`${process.env.PUBLIC_URL}/assets/parthkadiya.webp`} type="image/webp" />
             <img
               src={imgSrc}
-              alt="About Parth Kadiya - Web Developer Portfolio"
-              title="Parth Kadiya - Web Developer"
+              alt="Parth Kadiya (ParthKadiya) - Web Developer &amp; Frontend Developer in Ahmedabad"
+              title="Parth Kadiya - Web Developer Portfolio"
               width="400"
               height="400"
               loading="lazy"
               decoding="async"
+              onError={(e) => {
+                const fallback = encodeURI(`${process.env.PUBLIC_URL}/assets/parth.jpg`);
+                if (!e.currentTarget.dataset.fallbackApplied) {
+                  e.currentTarget.dataset.fallbackApplied = 'true';
+                  const picture = e.currentTarget.parentElement;
+                  if (picture && picture.tagName === 'PICTURE') {
+                    picture.querySelectorAll('source').forEach((s) => s.removeAttribute('srcset'));
+                  }
+                  e.currentTarget.src = fallback;
+                }
+              }}
             />
           </picture>
         </div>

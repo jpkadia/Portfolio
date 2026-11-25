@@ -30,6 +30,8 @@ app.use(helmet({
 
 // Allowed CORS Origins
 const allowedOrigins = [
+  'https://parthkadiya.me',
+  'https://www.parthkadiya.me',
   'https://parthkadiya.vercel.app',
   'http://localhost:3000',
   'http://127.0.0.1:3000',

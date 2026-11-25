@@ -10,7 +10,7 @@ Disallow: /admin
 Disallow: /admin/
 
 # Host
-Host: parthkadiya.vercel.app
+Host: parthkadiya.me
 
 # Sitemap
-Sitemap: https://parthkadiya.vercel.app/sitemap.xml
+Sitemap: https://parthkadiya.me/sitemap.xml
